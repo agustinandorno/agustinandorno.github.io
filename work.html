@@ -47,5 +47,23 @@
 
 </main>
 
+<script>
+  const slider = document.querySelector(".work-slider");
+
+  function nextProject() {
+    slider.scrollBy({
+      left: window.innerWidth * 0.8,
+      behavior: "smooth"
+    });
+  }
+
+  function previousProject() {
+    slider.scrollBy({
+      left: -window.innerWidth * 0.8,
+      behavior: "smooth"
+    });
+  }
+</script>
+  
 </body>
 </html>
