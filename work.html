@@ -86,22 +86,23 @@
 </div>
   
 <script>
-  const slider = document.querySelector(".work-slider");
+  document.querySelectorAll(".work-series").forEach((series) => {
+    const slider = series.querySelector(".work-slider");
+    const leftArrow = series.querySelector(".work-arrow.left");
+    const rightArrow = series.querySelector(".work-arrow.right");
 
-  function nextProject() {
-    slider.scrollBy({
-      left: window.innerWidth * 0.8,
-      behavior: "smooth"
+    rightArrow.addEventListener("click", () => {
+      slider.scrollBy({
+        left: window.innerWidth * 0.8,
+        behavior: "smooth"
+      });
     });
-  }
 
-  function previousProject() {
-    slider.scrollBy({
-      left: -window.innerWidth * 0.8,
-      behavior: "smooth"
+    leftArrow.addEventListener("click", () => {
+      slider.scrollBy({
+        left: -window.innerWidth * 0.8,
+        behavior: "smooth"
+      });
     });
-  }
+  });
 </script>
-  
-</body>
-</html>
