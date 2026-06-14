@@ -26,9 +26,9 @@
 
   <main class="work-slider">
 
-    <button class="work-arrow left" onclick="previousProject()">
-      &#8249;
-    </button>
+    <button class="work-arrow left" onclick="previousProject(this)">
+  &#8249;
+</button>
 
     <section class="work-project active-project">
       <div class="work-images">
@@ -43,9 +43,9 @@
       </div>
     </section>
 
-    <button class="work-arrow right" onclick="nextProject()">
-      &#8250;
-    </button>
+    <button class="work-arrow right" onclick="nextProject(this)">
+  &#8250;
+</button>
 
   </main>
 
@@ -59,9 +59,9 @@
 
   <main class="work-slider">
 
-    <button class="work-arrow left">
-      &#8249;
-    </button>
+    <button class="work-arrow left" onclick="previousProject(this)">
+  &#8249;
+</button>
 
     <section class="work-project">
 
@@ -74,9 +74,9 @@
 
     </section>
 
-    <button class="work-arrow right">
-      &#8250;
-    </button>
+    <button class="work-arrow right" onclick="nextProject(this)">
+  &#8250;
+</button>
 
   </main>
 
@@ -86,23 +86,21 @@
 </div>
   
 <script>
-  document.querySelectorAll(".work-series").forEach((series) => {
-    const slider = series.querySelector(".work-slider");
-    const leftArrow = series.querySelector(".work-arrow.left");
-    const rightArrow = series.querySelector(".work-arrow.right");
+  function nextProject(button) {
+    const slider = button.closest(".work-series").querySelector(".work-slider");
 
-    rightArrow.addEventListener("click", () => {
-      slider.scrollBy({
-        left: window.innerWidth * 0.8,
-        behavior: "smooth"
-      });
+    slider.scrollBy({
+      left: window.innerWidth * 0.8,
+      behavior: "smooth"
     });
+  }
 
-    leftArrow.addEventListener("click", () => {
-      slider.scrollBy({
-        left: -window.innerWidth * 0.8,
-        behavior: "smooth"
-      });
+  function previousProject(button) {
+    const slider = button.closest(".work-series").querySelector(".work-slider");
+
+    slider.scrollBy({
+      left: -window.innerWidth * 0.8,
+      behavior: "smooth"
     });
-  });
+  }
 </script>
