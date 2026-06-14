@@ -293,9 +293,9 @@ nav a.active {
     justify-content: center;
     gap: 30px;
 
-    max-width: 1600px;
+    max-width: none;
     margin: 0 auto;
-    padding: 40px 36px 80px;
+    padding: 40px 90px 80px;
 }
 
 .work-project {
