@@ -295,19 +295,19 @@ nav a.active {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    gap: 120px;
-    max-width: 1500px;
+    gap: 80px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
 .about-text {
-    width: 560px;
+    width: 520px;
     flex-shrink: 0;
 }
 
 .about-page p {
-    font-size: 20px;
-    line-height: 1.35;
+    font-size: 18px;
+    line-height: 1.4;
 }
 
 .about-image {
@@ -316,7 +316,7 @@ nav a.active {
 
 .about-image img {
     width: auto;
-    height: 620px;
+    height: 540px;
     object-fit: cover;
     display: block;
 }
