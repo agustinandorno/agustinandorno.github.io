@@ -294,10 +294,7 @@ nav a.active {
 .about-content {
     display: flex;
     align-items: flex-start;
-    justify-content: center;
-    gap: 80px;
-    max-width: 1300px;
-    margin: 0 auto;
+    gap: 90px;
 }
 
 .about-text {
