@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f5f0;
+  color: #111;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 36px;
+  position: sticky;
+  top: 0;
+  background: rgba(247, 245, 240, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 18px;
+  letter-spacing: 0.02em;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.home {
+  padding: 70px 36px 120px;
+}
+
+.intro {
+  max-width: 760px;
+  margin-bottom: 90px;
+}
+
+.intro p {
+  font-size: clamp(32px, 6vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+.project-list {
+  border-top: 1px solid #111;
+}
+
+.project-link {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr;
+  gap: 28px;
+  padding: 28px 0;
+  border-bottom: 1px solid #111;
+  align-items: baseline;
+}
+
+.project-link span,
+.project-link p {
+  color: #555;
+}
+
+.project-link h2 {
+  font-size: clamp(28px, 5vw, 58px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: normal;
+  margin: 0;
+}
+
+.project-link:hover h2 {
+  font-style: italic;
+}
+
+.project-page {
+  padding: 70px 36px 120px;
+}
+
+.project-intro {
+  max-width: 780px;
+  margin-bottom: 80px;
+}
+
+.project-intro h1 {
+  font-size: clamp(46px, 9vw, 110px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  font-weight: normal;
+  margin: 0 0 28px;
+}
+
+.project-intro p {
+  max-width: 560px;
+  color: #333;
+}
+
+.photo-sequence {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  max-width: 1100px;
+}
+
+.photo-sequence img {
+  width: 100%;
+  height: auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 70px;
+  border-bottom: 1px solid #111;
+}
+
+.about-page {
+  max-width: 760px;
+  padding: 100px 36px;
+}
+
+.about-page h1 {
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  font-weight: normal;
+  margin: 0 0 40px;
+}
+
+.about-page p {
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.about-page a {
+  border-bottom: 1px solid #111;
+}
+
+@media (max-width: 700px) {
+  .site-header {
+    padding: 22px;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  nav {
+    gap: 12px;
+    font-size: 12px;
+  }
+
+  .home,
+  .project-page,
+  .about-page {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .project-link {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
