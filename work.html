@@ -102,7 +102,6 @@
 </script>
 
 <script>
-
 document.querySelectorAll(".work-slider").forEach(slider => {
 
     let isDown = false;
@@ -111,36 +110,27 @@ document.querySelectorAll(".work-slider").forEach(slider => {
 
     slider.addEventListener("mousedown", (e) => {
         isDown = true;
-        slider.style.cursor = "grabbing";
+        slider.classList.add("dragging");
 
-        startX = e.pageX - slider.offsetLeft;
+        startX = e.pageX;
         scrollLeft = slider.scrollLeft;
     });
 
-    slider.addEventListener("mouseleave", () => {
+    window.addEventListener("mouseup", () => {
         isDown = false;
-        slider.style.cursor = "grab";
-    });
-
-    slider.addEventListener("mouseup", () => {
-        isDown = false;
-        slider.style.cursor = "grab";
+        slider.classList.remove("dragging");
     });
 
     slider.addEventListener("mousemove", (e) => {
-
         if (!isDown) return;
 
         e.preventDefault();
 
-        const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2;
-
+        const walk = (e.pageX - startX) * 2;
         slider.scrollLeft = scrollLeft - walk;
     });
 
 });
-
 </script>
   
 </body>
