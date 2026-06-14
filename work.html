@@ -103,7 +103,6 @@
 
 <script>
 document.querySelectorAll(".work-slider").forEach(slider => {
-
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -111,9 +110,9 @@ document.querySelectorAll(".work-slider").forEach(slider => {
     slider.addEventListener("mousedown", (e) => {
         isDown = true;
         slider.classList.add("dragging");
-
         startX = e.pageX;
         scrollLeft = slider.scrollLeft;
+        e.preventDefault();
     });
 
     window.addEventListener("mouseup", () => {
@@ -123,13 +122,9 @@ document.querySelectorAll(".work-slider").forEach(slider => {
 
     slider.addEventListener("mousemove", (e) => {
         if (!isDown) return;
-
-        e.preventDefault();
-
         const walk = (e.pageX - startX) * 2;
         slider.scrollLeft = scrollLeft - walk;
     });
-
 });
 </script>
   
