@@ -178,3 +178,51 @@ nav {
     gap: 10px;
   }
 }
+/* WORK PAGE */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+}
+
+.gallery {
+  column-count: 4;
+  column-gap: 28px;
+  padding: 35px;
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 28px;
+  break-inside: avoid;
+}
+
+@media (max-width: 1200px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 800px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .gallery {
+    column-count: 1;
+  }
+}
