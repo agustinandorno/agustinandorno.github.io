@@ -292,24 +292,23 @@ nav a.active {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 760px 1fr;
-    gap: 160px;
-    align-items: start;
+    display: flex;
+    align-items: flex-start;
+    gap: 90px;
 }
 
 .about-text {
-    max-width: 760px;
+    width: 760px;
+    flex-shrink: 0;
 }
 
 .about-image {
-    display: flex;
-    justify-content: flex-start;
+    flex-shrink: 0;
 }
 
 .about-image img {
     width: auto;
-    height: 460px;
+    height: 620px;
     object-fit: cover;
     display: block;
 }
