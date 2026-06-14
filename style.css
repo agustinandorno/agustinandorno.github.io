@@ -294,12 +294,20 @@ nav a.active {
 .about-content {
     display: flex;
     align-items: flex-start;
-    gap: 90px;
+    justify-content: center;
+    gap: 120px;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .about-text {
-    width: 650px;
+    width: 560px;
     flex-shrink: 0;
+}
+
+.about-page p {
+    font-size: 20px;
+    line-height: 1.35;
 }
 
 .about-image {
