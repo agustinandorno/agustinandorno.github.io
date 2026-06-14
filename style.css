@@ -34,9 +34,9 @@ a {
 }
 
 .logo {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.02em;
+  letter-spacing: -0.03em;
   text-transform: uppercase;
 }
 
