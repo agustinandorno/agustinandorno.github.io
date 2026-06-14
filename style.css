@@ -43,6 +43,9 @@ a {
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
+.surname {
+    margin-left: 10px;
+}
 
 nav {
   display: flex;
