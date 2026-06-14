@@ -297,8 +297,12 @@ nav a.active {
     overflow-y: hidden;
     padding: 40px 90px 10px;
     scrollbar-width: none;
+    cursor: grab;
 }
 
+.work-slider:active {
+    cursor: grabbing;
+}
 .work-slider::-webkit-scrollbar {
     display: none;
 }
