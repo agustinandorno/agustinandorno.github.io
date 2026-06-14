@@ -325,29 +325,32 @@ nav a.active {
     top: 50%;
     transform: translateY(-50%);
 
-    width: 70px;
-    height: 70px;
+    width: 54px;
+    height: 72px;
 
     border: none;
-    background: rgba(255, 255, 255, 0.35);
+
+    background: rgba(200, 200, 200, 0.35);
+    backdrop-filter: blur(3px);
 
     color: white;
-    font-size: 58px;
-    font-weight: 200;
-    line-height: 1;
+    font-size: 42px;
+    font-weight: 300;
 
     cursor: pointer;
     z-index: 999;
+
+    transition: all 0.2s ease;
 }
 
 .work-arrow.left {
-    left: 0;
+    left: 8px;
 }
 
 .work-arrow.right {
-    right: 0;
+    right: 8px;
 }
 
 .work-arrow:hover {
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(180, 180, 180, 0.55);
 }
