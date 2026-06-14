@@ -154,8 +154,8 @@ nav {
 }
 
 .about-page p {
-  font-size: 22px;
-  line-height: 1.35;
+  font-size: 18px;
+  line-height: 1.45;
 }
 
 .about-page a {
@@ -298,7 +298,7 @@ nav a.active {
 }
 
 .about-text {
-    width: 760px;
+    width: 650px;
     flex-shrink: 0;
 }
 
