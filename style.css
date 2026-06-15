@@ -445,7 +445,7 @@ nav a.active {
     overflow-y: hidden;
 
     padding-left: 0px;
-    padding-right: px;
+    padding-right: 0px;
 
     scroll-padding-left: 20px;
     scrollbar-width: none;
