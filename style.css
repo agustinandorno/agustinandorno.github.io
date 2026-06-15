@@ -453,8 +453,10 @@ nav a.active {
 }
 
 .hero-gallery img {
-    height: 520px;
+    max-height: 520px;
+    height: auto;
     width: auto;
+    max-width: 90vw;
     flex-shrink: 0;
 }
 
