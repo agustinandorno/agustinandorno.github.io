@@ -444,7 +444,7 @@ nav a.active {
     overflow-x: auto;
     overflow-y: hidden;
 
-    padding-left: 20px;
+    padding-left: 0px;
     padding-right: 20px;
 
     scroll-padding-left: 20px;
@@ -455,7 +455,7 @@ nav a.active {
     display: none;
 }
 .hero-gallery img {
-    height: 450px;
+    height: 550px;
     width: auto;
     max-width: none;
     flex-shrink: 0;
