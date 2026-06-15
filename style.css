@@ -470,14 +470,14 @@ nav a.active {
 
 nav a:nth-child(4) {
     grid-column: 3;
+    grid-row: 2;
     justify-self: start;
-    margin-left: 4px;
 }
 
 nav a:nth-child(5) {
     grid-column: 3;
+    grid-row: 2;
     justify-self: end;
-    margin-right: 4px;
 }
 
     .hero-gallery {
