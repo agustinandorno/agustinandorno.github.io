@@ -39,7 +39,7 @@ a {
   width: 205px;
   font-size: 25px;
   font-weight: 150;
-  line-height: 1.2;
+  line-height: 0.9;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
@@ -50,8 +50,8 @@ a {
 nav {
   display: flex;
   gap: 40px;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 250;
 }
 
 .home {
