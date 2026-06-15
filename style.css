@@ -439,13 +439,13 @@ nav a.active {
     .hero-gallery {
     display: flex;
     justify-content: flex-start;
-    gap: 16px;
+    gap: 10px;
 
     overflow-x: auto;
     overflow-y: hidden;
 
     padding-left: 0px;
-    padding-right: 20px;
+    padding-right: px;
 
     scroll-padding-left: 20px;
     scrollbar-width: none;
