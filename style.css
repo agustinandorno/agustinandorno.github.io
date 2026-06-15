@@ -470,17 +470,18 @@ nav a.active {
 }
 
   .work-slider {
-    padding: 20px 18px 8px;
-  }
+    padding: 20px 40px 8px;
+}
 
   .work-images {
     gap: 16px;
   }
 
   .work-images img {
-    height: 340px;
+    height: 55vh;
     width: auto;
-  }
+    flex-shrink: 0;
+}
 
   .work-caption {
     font-size: 10px;
