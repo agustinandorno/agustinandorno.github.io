@@ -458,10 +458,27 @@ nav a.active {
   }
 
   nav {
-    gap: 22px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 22px;
+    row-gap: 6px;
+    align-items: center;
+
     font-size: 16px;
     white-space: nowrap;
-  }
+}
+
+nav a:nth-child(4) {
+    grid-column: 3;
+    justify-self: start;
+    margin-left: 4px;
+}
+
+nav a:nth-child(5) {
+    grid-column: 3;
+    justify-self: end;
+    margin-right: 4px;
+}
 
     .hero-gallery {
     display: flex;
@@ -554,7 +571,6 @@ nav a.active {
     width: 100%;
     height: auto;
   }
-}
 
   .contact-detail {
     font-size: 14px;
