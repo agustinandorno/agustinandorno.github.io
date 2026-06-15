@@ -566,6 +566,11 @@ nav a.active {
   padding: 40px 0 30px;
 }
 
+.site-footer div {
+  font-size: 11px;
+  color: #8a8a8a;
+}
+
 .site-footer a {
   font-size: 11px;
   color: #8a8a8a;
