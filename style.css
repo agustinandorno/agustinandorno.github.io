@@ -38,8 +38,8 @@ a {
   flex-direction: column;
   width: 205px;
   font-size: 25px;
-  font-weight: 250;
-  line-height: 0.9;
+  font-weight: 150;
+  line-height: 1.2;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
