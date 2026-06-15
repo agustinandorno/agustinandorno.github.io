@@ -436,15 +436,14 @@ nav a.active {
     white-space: nowrap;
   }
 
-  .hero-gallery {
+    .hero-gallery {
     display: flex;
     gap: 16px;
 
     overflow-x: auto;
     overflow-y: hidden;
 
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 20px;
 
     scrollbar-width: none;
 }
@@ -452,9 +451,8 @@ nav a.active {
 .hero-gallery::-webkit-scrollbar {
     display: none;
 }
-
 .hero-gallery img {
-    height: 55vh;
+    height: 520px;
     width: auto;
     flex-shrink: 0;
 }
