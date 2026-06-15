@@ -438,16 +438,24 @@ nav a.active {
 
   .hero-gallery {
     display: flex;
-    justify-content: center;
-    gap: 12px;
-    overflow: hidden;
+    gap: 16px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
     padding: 0 20px;
+
+    scrollbar-width: none;
+}
+
+.hero-gallery::-webkit-scrollbar {
+    display: none;
 }
 
 .hero-gallery img {
-    width: 48%;
-    height: auto;
-    object-fit: cover;
+    height: 520px;
+    width: auto;
+    flex-shrink: 0;
 }
 
   .home-caption {
