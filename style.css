@@ -469,10 +469,10 @@ html.work-page body {
   }
 
   .site-header {
-    position: relative;
-    padding: 24px 18px 36px;
-    gap: 20px;
-  }
+  position: relative;
+  padding: 70px 18px 36px;
+  gap: 20px;
+}
 
   .logo {
     font-size: 28px;
@@ -549,11 +549,11 @@ html.work-page body {
     backdrop-filter: none;
   }
 
-  .work-series {
-    min-height: auto;
-    margin-bottom: 20px;
-    justify-content: flex-start;
-  }
+.work-series {
+  min-height: auto;
+  margin-bottom: 0;
+  justify-content: flex-start;
+}
 
   .work-slider {
     padding: 20px 0 8px;
@@ -573,13 +573,13 @@ html.work-page body {
     display: none;
   }
 
-  .work-caption {
-    font-size: 10px;
-    line-height: 1.25;
-    padding: 0 28px;
-    margin-top: 10px;
-    margin-bottom: 70px;
-  }
+ .work-caption {
+  font-size: 10px;
+  line-height: 1.25;
+  padding: 0 28px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
 
   .about-content {
     flex-direction: column;
