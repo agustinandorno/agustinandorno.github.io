@@ -469,10 +469,17 @@ html.work-page body {
   }
 
   .site-header {
-  position: relative;
-  padding: 70px 18px 36px;
-  gap: 20px;
-}
+    position: relative;
+    padding: 24px 18px 36px;
+    gap: 20px;
+  }
+
+  body.work-page .site-header {
+    position: relative;
+    padding: 34px 18px 36px;
+    background: transparent;
+    backdrop-filter: none;
+  }
 
   .logo {
     font-size: 28px;
@@ -486,7 +493,6 @@ html.work-page body {
     column-gap: 22px;
     row-gap: 6px;
     align-items: center;
-
     font-size: 16px;
     white-space: nowrap;
   }
@@ -509,14 +515,10 @@ html.work-page body {
     display: flex;
     justify-content: flex-start;
     gap: 10px;
-
     overflow-x: auto;
     overflow-y: hidden;
-
     padding-left: 0;
     padding-right: 0;
-
-    scroll-padding-left: 20px;
     scrollbar-width: none;
   }
 
@@ -535,25 +537,17 @@ html.work-page body {
     width: 80%;
     max-width: 450px;
     margin: 12px auto 40px auto;
-
     text-align: center;
-
     font-size: 11px;
     color: #808080;
     line-height: 1.3;
   }
 
-  body.work-page .site-header {
-    position: relative;
-    background: transparent;
-    backdrop-filter: none;
+  .work-series {
+    min-height: auto;
+    margin-bottom: 0;
+    justify-content: flex-start;
   }
-
-.work-series {
-  min-height: auto;
-  margin-bottom: 0;
-  justify-content: flex-start;
-}
 
   .work-slider {
     padding: 20px 0 8px;
@@ -573,13 +567,13 @@ html.work-page body {
     display: none;
   }
 
- .work-caption {
-  font-size: 10px;
-  line-height: 1.25;
-  padding: 0 28px;
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
+  .work-caption {
+    font-size: 10px;
+    line-height: 1.25;
+    padding: 0 28px;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
 
   .about-content {
     flex-direction: column;
@@ -612,4 +606,30 @@ html.work-page body {
     font-size: 14px;
   }
 
+}
+
+.site-footer {
+  text-align: center;
+  padding: 40px 0 30px;
+  font-size: 11px;
+  color: #8a8a8a;
+  line-height: 1.4;
+}
+
+.site-footer div {
+  font-size: 11px;
+  color: #8a8a8a;
+  margin-bottom: 4px;
+}
+
+.site-footer a {
+  font-size: 11px;
+  color: #8a8a8a;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.site-footer a:hover {
+  color: #000;
+  border-bottom: none;
 }
