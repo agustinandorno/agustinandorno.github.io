@@ -302,13 +302,14 @@ nav a.active {
   line-height: 1.3;
 }
 
-html.work-page {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+html.work-page,
+html.work-page body {
+  height: 100%;
 }
 
 body.work-page {
-  overflow-y: visible;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
 .work-series {
