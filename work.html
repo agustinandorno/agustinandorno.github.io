@@ -248,6 +248,7 @@ document.querySelectorAll(".work-slider").forEach(slider => {
   let isScrolling = false;
 
   window.addEventListener("wheel", function(event) {
+    event.preventDefault();
     if (isScrolling) return;
 
     if (event.deltaY > 0 && currentSeries < series.length - 1) {
@@ -268,7 +269,7 @@ document.querySelectorAll(".work-slider").forEach(slider => {
     setTimeout(() => {
       isScrolling = false;
     }, 900);
-  }, { passive: true });
+  }, { passive: false });
 </script>
   
 </body>
