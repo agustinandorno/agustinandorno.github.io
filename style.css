@@ -302,21 +302,26 @@ nav a.active {
   line-height: 1.3;
 }
 
+html.work-page {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
 body.work-page {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+  overflow-y: visible;
 }
 
 .work-series {
-    position: relative;
-    min-height: 100vh;
-    margin-bottom: 0;
+  position: relative;
+  min-height: 100vh;
+  margin-bottom: 0;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-    scroll-snap-align: start;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 .work-slider {
     width: 100%;
