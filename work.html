@@ -242,5 +242,34 @@ document.querySelectorAll(".work-slider").forEach(slider => {
   <a href="privacy.html">Privacy Policy</a>
 </footer>
 
+<script>
+  const series = document.querySelectorAll(".work-series");
+  let currentSeries = 0;
+  let isScrolling = false;
+
+  window.addEventListener("wheel", function(event) {
+    if (isScrolling) return;
+
+    if (event.deltaY > 0 && currentSeries < series.length - 1) {
+      currentSeries++;
+    } else if (event.deltaY < 0 && currentSeries > 0) {
+      currentSeries--;
+    } else {
+      return;
+    }
+
+    isScrolling = true;
+
+    series[currentSeries].scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+    setTimeout(() => {
+      isScrolling = false;
+    }, 900);
+  }, { passive: true });
+</script>
+  
 </body>
 </html>
