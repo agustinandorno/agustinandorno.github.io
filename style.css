@@ -321,7 +321,7 @@ html.work-page body {
 
 .work-series {
   position: relative;
-  min-height: auto;
+  min-height: 70vh;
   margin-bottom: 0;
 
   display: flex;
@@ -549,11 +549,6 @@ nav a:nth-child(5) {
     color: #808080;
     line-height: 1.3;
 }
-
-body.work-page .work-series {
-  padding-bottom: 80px;
-}
-  
   .work-slider {
     padding: 20px 40px 8px;
 }
