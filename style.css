@@ -302,7 +302,7 @@ nav a.active {
 
     text-align: center;
 
-    font-size: 12px;
+    font-size: 9px;
     color: #808080;
     line-height: 1.3;
 }
@@ -611,16 +611,16 @@ nav a:nth-child(5) {
 }
 .site-footer {
   text-align: center;
-  padding: 40px 0 30px;
+  padding: 10px 0 20px;
 }
 
 .site-footer div {
-  font-size: 11px;
+  font-size: 7px;
   color: #8a8a8a;
 }
 
 .site-footer a {
-  font-size: 11px;
+  font-size: 7px;
   color: #8a8a8a;
   text-decoration: none;
 }
