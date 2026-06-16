@@ -31,6 +31,11 @@ a {
   background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(8px);
   z-index: 10;
+  }
+body:not(.work-page):not(.about-page):not(.contact-page) .site-header {
+  padding-left: 18px;
+  padding-right: 18px;
+}
 }
 
 body.work-page .site-header {
