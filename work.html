@@ -247,6 +247,13 @@ document.querySelectorAll(".work-slider").forEach(slider => {
   let currentSeries = 0;
   let isScrolling = false;
 
+  window.addEventListener("load", () => {
+  series[0].scrollIntoView({
+    behavior: "auto",
+    block: "center"
+  });
+});
+
   window.addEventListener("wheel", function(event) {
     event.preventDefault();
     if (isScrolling) return;
