@@ -307,11 +307,6 @@ html.work-page body {
   height: 100%;
 }
 
-body.work-page {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-}
-
 .work-series {
   position: relative;
   min-height: 100vh;
@@ -320,9 +315,6 @@ body.work-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
-
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
 }
 .work-slider {
     width: 100%;
