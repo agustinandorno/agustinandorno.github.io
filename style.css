@@ -476,8 +476,7 @@ html.work-page body {
 
   body.work-page .site-header {
     position: relative;
-    padding: 24px 18px 36px;
-    gap: 20px;
+    padding: 52px 18px 36px;
     background: transparent;
     backdrop-filter: none;
   }
