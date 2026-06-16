@@ -253,7 +253,7 @@ nav {
 
 .hero-image img {
   width: 100%;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 220px);
   object-fit: contain;
 }
 
