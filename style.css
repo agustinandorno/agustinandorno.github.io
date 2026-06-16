@@ -489,31 +489,23 @@ html.work-page body {
 
     font-size: 16px;
     white-space: nowrap;
-}
+  }
 
-  nav {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    column-gap: 22px;
-    row-gap: 6px;
-    align-items: center;
-}
-
-nav a:nth-child(4) {
+  nav a:nth-child(4) {
     grid-column: 3;
     grid-row: 2;
     justify-self: start;
-}
+  }
 
-nav a:nth-child(5) {
+  nav a:nth-child(5) {
     grid-column: 3;
     grid-row: 2;
     justify-self: end;
     position: relative;
     top: -3px;
-}
+  }
 
-    .hero-gallery {
+  .hero-gallery {
     display: flex;
     justify-content: flex-start;
     gap: 10px;
@@ -521,22 +513,23 @@ nav a:nth-child(5) {
     overflow-x: auto;
     overflow-y: hidden;
 
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 0;
+    padding-right: 0;
 
     scroll-padding-left: 20px;
     scrollbar-width: none;
-}
+  }
 
-.hero-gallery::-webkit-scrollbar {
+  .hero-gallery::-webkit-scrollbar {
     display: none;
-}
-.hero-gallery img {
+  }
+
+  .hero-gallery img {
     height: 550px;
     width: auto;
     max-width: none;
     flex-shrink: 0;
-}
+  }
 
   .home-caption {
     width: 80%;
@@ -548,34 +541,44 @@ nav a:nth-child(5) {
     font-size: 11px;
     color: #808080;
     line-height: 1.3;
-}
+  }
+
+  body.work-page .site-header {
+    position: relative;
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .work-series {
+    min-height: auto;
+    margin-bottom: 80px;
+    justify-content: flex-start;
+  }
 
   .work-slider {
-    padding: 20px 40px 8px;
-}
+    padding: 20px 0 8px;
+  }
 
   .work-images {
-    gap: 16px;
+    gap: 12px;
   }
 
   .work-images img {
-    height: 55vh;
+    height: 58vh;
     width: auto;
     flex-shrink: 0;
-}
+  }
+
+  .work-arrow {
+    display: none;
+  }
 
   .work-caption {
     font-size: 10px;
     line-height: 1.25;
     padding: 0 28px;
-    margin-top: 8px;
+    margin-top: 10px;
     margin-bottom: 70px;
-  }
-
-  .work-arrow {
-    width: 38px;
-    height: 52px;
-    font-size: 32px;
   }
 
   .about-content {
@@ -609,23 +612,4 @@ nav a:nth-child(5) {
     font-size: 14px;
   }
 
-}
-.site-footer {
-  text-align: center;
-  padding: 40px 0 30px;
-}
-
-.site-footer div {
-  font-size: 11px;
-  color: #8a8a8a;
-}
-
-.site-footer a {
-  font-size: 11px;
-  color: #8a8a8a;
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  color: #000;
 }
