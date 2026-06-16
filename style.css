@@ -153,7 +153,7 @@ nav {
 }
 
 .about-page {
-  max-width: 760px;
+  max-width: 560px;
   padding: 100px 36px;
 }
 
@@ -418,7 +418,7 @@ html.work-page body {
 }
 
 .about-text {
-  width: 260px;
+  width: 560px;
   flex-shrink: 0;
 }
 
