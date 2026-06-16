@@ -168,6 +168,9 @@ nav {
 .about-page p {
   font-size: 14px;
   line-height: 1.45;
+  max-width: 420px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .about-page a {
