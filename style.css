@@ -321,7 +321,7 @@ html.work-page body {
 
 .work-series {
   position: relative;
-  min-height: 100vh;
+  min-height: auto;
   margin-bottom: 0;
 
   display: flex;
@@ -551,7 +551,7 @@ nav a:nth-child(5) {
 }
 
 body.work-page .work-series {
-  padding-bottom: 40px;
+  padding-bottom: 80px;
 }
   
   .work-slider {
