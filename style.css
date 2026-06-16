@@ -322,6 +322,7 @@ html.work-page body {
 .work-series {
   position: relative;
   min-height: 70vh;
+  margin-top: 70px;
   margin-bottom: 0;
 
   display: flex;
