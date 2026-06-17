@@ -476,8 +476,13 @@ html.work-page body {
   color: #000;
   opacity: 0.6;
 
+  cursor: pointer;
+  
   pointer-events: auto;
   z-index: 9999;
+}
+.work-hover-arrow:hover {
+  opacity: 1;
 }
 
 @media (max-width: 700px) {
