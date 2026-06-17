@@ -659,3 +659,8 @@ nav a:nth-child(5) {
   color: #000;
 }
 
+body.work-page .work-series:first-of-type {
+        padding-top: 170px;
+    }
+
+}
