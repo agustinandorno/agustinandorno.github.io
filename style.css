@@ -64,8 +64,10 @@ body.work-page .site-header {
 nav {
   display: flex;
   gap: 40px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 250;
+  position: relative;
+  top: -12px;
 }
 
 .home {
