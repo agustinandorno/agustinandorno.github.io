@@ -50,9 +50,9 @@ body.work-page .site-header {
   display: inline-flex;
   flex-direction: column;
   width: 205px;
-  font-size: 25px;
+  font-size: 40px;
   font-weight: 150;
-  line-height: 0.9;
+  line-height: 0.82;
   letter-spacing: 0.03em;
   text-transform: uppercase;
 }
