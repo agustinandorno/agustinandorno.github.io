@@ -490,7 +490,7 @@ html.work-page body {
 
 @media (max-width: 700px) {
 
-  body.work-page .work-series:first-of-type {
+  body.work-page .work-series {
     padding-top: 60px;
   }
   
