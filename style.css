@@ -296,7 +296,7 @@ nav a.active {
 }
 
 .hero-gallery img {
-    height: 560px;      /* misma altura para ambas */
+    height: 600px;      /* misma altura para ambas */
     width: auto;        /* mantiene proporción */
     object-fit: cover;
 }
