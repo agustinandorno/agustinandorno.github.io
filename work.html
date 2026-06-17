@@ -279,7 +279,31 @@ document.querySelectorAll(".work-slider").forEach(slider => {
   }, { passive: false });
 
 function goToNextSeries() {
-  const series = document.querySelectorAll(".work-series");
+  const isMobile = window.matchMedia("(max-width: 700px)").matches;
+
+  if (isMobile) {
+    if (currentSeries < series.length - 1) {
+      currentSeries++;
+    } else {
+      return;
+    }
+
+    const header = document.querySelector(".site-header");
+    const headerHeight = header ? header.offsetHeight : 0;
+
+    const targetTop =
+      series[currentSeries].getBoundingClientRect().top +
+      window.pageYOffset -
+      headerHeight;
+
+    window.scrollTo({
+      top: targetTop,
+      behavior: "smooth"
+    });
+
+    return;
+  }
+
   const current = Math.round(window.scrollY / window.innerHeight);
 
   if (current < series.length - 1) {
@@ -289,8 +313,6 @@ function goToNextSeries() {
     });
   }
 }
-  
-</script>
 
 <div class="work-hover-arrow" onclick="goToNextSeries()">↓ MORE</div>
   
