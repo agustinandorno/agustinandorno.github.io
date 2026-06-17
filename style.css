@@ -590,9 +590,8 @@ nav a:nth-child(5) {
   }
 
  .work-images img {
-  width: 100vw;
+  width: auto;
   height: 65vh;
-  object-fit: cover;
   flex-shrink: 0;
 }
 
