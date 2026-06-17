@@ -288,17 +288,9 @@ function goToNextSeries() {
       return;
     }
 
-    const header = document.querySelector(".site-header");
-    const headerHeight = header ? header.offsetHeight : 0;
-
-    const targetTop =
-      series[currentSeries].getBoundingClientRect().top +
-      window.pageYOffset -
-      headerHeight;
-
-    window.scrollTo({
-      top: targetTop,
-      behavior: "smooth"
+    series[currentSeries].scrollIntoView({
+      behavior: "smooth",
+      block: "start"
     });
 
     return;
