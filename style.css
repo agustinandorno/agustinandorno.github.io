@@ -589,10 +589,11 @@ nav a:nth-child(5) {
     gap: 16px;
   }
 
-  .work-images img {
-    width: 100vw;
-    height: auto;
-    flex-shrink: 0;
+ .work-images img {
+  width: 100vw;
+  height: 65vh;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
   .work-caption {
