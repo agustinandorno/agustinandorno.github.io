@@ -476,7 +476,7 @@ html.work-page body {
   color: #000;
   opacity: 0.6;
 
-  pointer-events: none;
+  pointer-events: auto;
   z-index: 9999;
 }
 
