@@ -277,6 +277,19 @@ document.querySelectorAll(".work-slider").forEach(slider => {
       isScrolling = false;
     }, 900);
   }, { passive: false });
+
+function goToNextSeries() {
+  const series = document.querySelectorAll(".work-series");
+  const current = Math.round(window.scrollY / window.innerHeight);
+
+  if (current < series.length - 1) {
+    series[current + 1].scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }
+}
+  
 </script>
 
 <div class="work-hover-arrow" onclick="goToNextSeries()">↓ MORE</div>
