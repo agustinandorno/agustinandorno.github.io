@@ -490,6 +490,10 @@ html.work-page body {
 
 @media (max-width: 700px) {
 
+  body.work-page .work-series:first-of-type {
+    padding-top: 60px;
+  }
+  
   html,
   body {
     width: 100%;
