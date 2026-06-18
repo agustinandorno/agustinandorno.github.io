@@ -21,3 +21,5 @@
 - Usa fotos JPG de máximo 2000px en el lado largo.
 - Empieza con 3 proyectos y 4 fotos por proyecto.
 - Cuando funcione, puedes duplicar páginas de proyecto y añadir más fotos.
+
+
