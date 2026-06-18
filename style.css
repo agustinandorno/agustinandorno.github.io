@@ -606,12 +606,14 @@ nav a:nth-child(5) {
     line-height: 1.3;
 }
   .work-slider {
-    padding: 20px 0 8px;
+  padding: 20px 8px 8px;
+  scroll-padding-left: 8px;
 }
 
   .work-images {
-    gap: 16px;
-  }
+  gap: 16px;
+  align-items: center;
+}
 
  .work-images img {
   width: auto;
