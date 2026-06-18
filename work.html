@@ -190,37 +190,51 @@
 </div>
   
 <script>
-  function nextProject(button) {
-    const slider = button.closest(".work-series").querySelector(".work-slider");
-    const isMobile = window.matchMedia("(max-width: 700px)").matches;
+ function nextProject(button) {
+  const slider = button.closest(".work-series").querySelector(".work-slider");
+  const isMobile = window.matchMedia("(max-width: 700px)").matches;
 
-    if (isMobile) {
-      const images = Array.from(slider.querySelectorAll(".work-images img"));
-      const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
+  if (isMobile) {
+    const images = Array.from(slider.querySelectorAll(".work-images img"));
+    const viewportLeft = slider.scrollLeft;
+    const viewportRight = viewportLeft + slider.clientWidth;
 
-      let currentIndex = images.findIndex(img => {
-        const imgCenter = img.offsetLeft + img.offsetWidth / 2;
-        return imgCenter > sliderCenter + 10;
+    const currentIndex = images.findIndex(img => {
+      const imgLeft = img.offsetLeft;
+      const imgRight = img.offsetLeft + img.offsetWidth;
+      return imgLeft <= viewportLeft + 20 && imgRight > viewportLeft + 20;
+    });
+
+    if (currentIndex === -1) return;
+
+    const currentImg = images[currentIndex];
+    const currentImgRight = currentImg.offsetLeft + currentImg.offsetWidth;
+
+    if (currentImgRight > viewportRight + 20) {
+      slider.scrollTo({
+        left: currentImgRight - slider.clientWidth,
+        behavior: "smooth"
       });
-
-      if (currentIndex === -1) return;
-
-      images[currentIndex].scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-        block: "nearest"
-      });
-
       return;
     }
 
-    const image = slider.querySelector(".work-images img");
+    if (currentIndex < images.length - 1) {
+      slider.scrollTo({
+        left: images[currentIndex + 1].offsetLeft,
+        behavior: "smooth"
+      });
+    }
 
-    slider.scrollBy({
-      left: image.offsetWidth + 16,
-      behavior: "smooth"
-    });
+    return;
   }
+
+  const image = slider.querySelector(".work-images img");
+
+  slider.scrollBy({
+    left: image.offsetWidth + 16,
+    behavior: "smooth"
+  });
+}
 
   function previousProject(button) {
     const slider = button.closest(".work-series").querySelector(".work-slider");
