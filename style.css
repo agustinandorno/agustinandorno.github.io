@@ -339,7 +339,7 @@ html.work-page body {
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 40px 90px 10px;
+    padding: 40px 0 10px;
     scrollbar-width: none;
     cursor: grab;
 }
