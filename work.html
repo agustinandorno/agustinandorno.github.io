@@ -192,24 +192,68 @@
   
 <script>
   function nextProject(button) {
-  const slider = button.closest(".work-series").querySelector(".work-slider");
-  const image = slider.querySelector(".work-images img");
+    const slider = button.closest(".work-series").querySelector(".work-slider");
+    const isMobile = window.matchMedia("(max-width: 700px)").matches;
 
-  slider.scrollBy({
-    left: image.offsetWidth + 16,
-    behavior: "smooth"
-  });
-}
+    if (isMobile) {
+      const images = Array.from(slider.querySelectorAll(".work-images img"));
+      const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
 
-function previousProject(button) {
-  const slider = button.closest(".work-series").querySelector(".work-slider");
-  const image = slider.querySelector(".work-images img");
+      let currentIndex = images.findIndex(img => {
+        const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+        return imgCenter > sliderCenter + 10;
+      });
 
-  slider.scrollBy({
-    left: -(image.offsetWidth + 16),
-    behavior: "smooth"
-  });
-}
+      if (currentIndex === -1) return;
+
+      images[currentIndex].scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest"
+      });
+
+      return;
+    }
+
+    const image = slider.querySelector(".work-images img");
+
+    slider.scrollBy({
+      left: image.offsetWidth + 16,
+      behavior: "smooth"
+    });
+  }
+
+  function previousProject(button) {
+    const slider = button.closest(".work-series").querySelector(".work-slider");
+    const isMobile = window.matchMedia("(max-width: 700px)").matches;
+
+    if (isMobile) {
+      const images = Array.from(slider.querySelectorAll(".work-images img"));
+      const sliderCenter = slider.scrollLeft + slider.clientWidth / 2;
+
+      let currentIndex = images.findLastIndex(img => {
+        const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+        return imgCenter < sliderCenter - 10;
+      });
+
+      if (currentIndex === -1) return;
+
+      images[currentIndex].scrollIntoView({
+        behavior: "smooth",
+        inline: "center",
+        block: "nearest"
+      });
+
+      return;
+    }
+
+    const image = slider.querySelector(".work-images img");
+
+    slider.scrollBy({
+      left: -(image.offsetWidth + 16),
+      behavior: "smooth"
+    });
+  }
 </script>
 
 <script>
