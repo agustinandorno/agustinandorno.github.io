@@ -302,12 +302,12 @@ nav a.active {
     display: flex;
     justify-content: center;
     gap: 15px;
-    padding: 35px 36px 10px 36px;
+    padding: 40px 36px 10px 36px;
     align-items: flex-end;
 }
 
 .hero-gallery img {
-    height: 630px;      /* misma altura para ambas */
+    height: 615px;      /* misma altura para ambas */
     width: auto;        /* mantiene proporción */
     object-fit: cover;
 }
