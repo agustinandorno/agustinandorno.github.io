@@ -219,11 +219,20 @@
     }
 
     if (currentIndex < images.length - 1) {
-      slider.scrollTo({
-        left: images[currentIndex + 1].offsetLeft,
-        behavior: "smooth"
-      });
-    }
+  const nextImg = images[currentIndex + 1];
+
+  if (currentIndex + 1 === images.length - 1) {
+    slider.scrollTo({
+      left: nextImg.offsetLeft - (slider.clientWidth - nextImg.offsetWidth) / 2,
+      behavior: "smooth"
+    });
+  } else {
+    slider.scrollTo({
+      left: nextImg.offsetLeft,
+      behavior: "smooth"
+    });
+  }
+}
 
     return;
   }
