@@ -588,6 +588,7 @@ nav a:nth-child(5) {
     overflow-x: auto;
     overflow-y: hidden;
 
+    padding-top: 60px;  
     padding-left: 0px;
     padding-right: 0px;
 
