@@ -192,22 +192,24 @@
   
 <script>
   function nextProject(button) {
-    const slider = button.closest(".work-series").querySelector(".work-slider");
+  const slider = button.closest(".work-series").querySelector(".work-slider");
+  const image = slider.querySelector(".work-images img");
 
-    slider.scrollBy({
-      left: window.innerWidth * 0.8,
-      behavior: "smooth"
-    });
-  }
+  slider.scrollBy({
+    left: image.offsetWidth + 16,
+    behavior: "smooth"
+  });
+}
 
-  function previousProject(button) {
-    const slider = button.closest(".work-series").querySelector(".work-slider");
+function previousProject(button) {
+  const slider = button.closest(".work-series").querySelector(".work-slider");
+  const image = slider.querySelector(".work-images img");
 
-    slider.scrollBy({
-      left: -window.innerWidth * 0.8,
-      behavior: "smooth"
-    });
-  }
+  slider.scrollBy({
+    left: -(image.offsetWidth + 16),
+    behavior: "smooth"
+  });
+}
 </script>
 
 <script>
