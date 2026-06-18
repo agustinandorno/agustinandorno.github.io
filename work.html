@@ -211,7 +211,46 @@
   </p>
 
 </div>
-  
+
+  <div class="work-series">
+
+  <button class="work-arrow left" onclick="previousProject(this)">
+    &#8249;
+  </button>
+
+  <main class="work-slider">
+
+    <section class="work-project">
+
+      <div class="work-images">
+
+        <img src="images/DSCF1000.jpg" alt="">
+        <img src="images/DSCF1001.jpg" alt="">
+        <img src="images/DSCF1002.jpg" alt="">
+        <img src="images/DSCF1003.jpg" alt="">
+        <img src="images/DSCF1004.jpg" alt="">
+        <img src="images/DSCF1005.jpg" alt="">
+        <img src="images/DSCF1006.jpg" alt="">
+        <img src="images/DSCF1007.jpg" alt="">
+        <img src="images/DSCF1008.jpg" alt="">
+        <img src="images/DSCF1009.jpg" alt="">
+      </div>
+
+    </section>
+
+  </main>
+
+  <button class="work-arrow right" onclick="nextProject(this)">
+    &#8250;
+  </button>
+
+    <p class="work-caption">
+    Interior report, apartment in Paris. 
+    <span class="series-label">SÉRIE D’INTÉRIEURS c. 2025</span>
+  </p>
+
+</div>
+
 <script>
  function nextProject(button) {
   const slider = button.closest(".work-series").querySelector(".work-slider");
