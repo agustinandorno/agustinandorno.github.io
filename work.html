@@ -278,6 +278,35 @@ document.querySelectorAll(".work-slider").forEach(slider => {
     }, 900);
   }, { passive: false });
 
+function goToPreviousSeries() {
+  const isMobile = window.matchMedia("(max-width: 700px)").matches;
+
+  if (isMobile) {
+
+    if (currentSeries > 0) {
+      currentSeries--;
+    } else {
+      return;
+    }
+
+    series[currentSeries].scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+    return;
+  }
+
+  const current = Math.round(window.scrollY / window.innerHeight);
+
+  if (current > 0) {
+    series[current - 1].scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }
+}
+  
 function goToNextSeries() {
   const isMobile = window.matchMedia("(max-width: 700px)").matches;
 
