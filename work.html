@@ -445,56 +445,21 @@ document.querySelectorAll(".work-slider").forEach(slider => {
   }, { passive: false });
 
 function goToPreviousSeries() {
-  const isMobile = window.matchMedia("(max-width: 700px)").matches;
-
-  if (isMobile) {
-
-    if (currentSeries > 0) {
-      currentSeries--;
-    } else {
-      return;
-    }
+  if (currentSeries > 0) {
+    currentSeries--;
 
     series[currentSeries].scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-
-    return;
-  }
-
-  const current = Math.round(window.scrollY / window.innerHeight);
-
-  if (current > 0) {
-    series[current - 1].scrollIntoView({
       behavior: "smooth",
       block: "center"
     });
   }
 }
-  
-function goToNextSeries() {
-  const isMobile = window.matchMedia("(max-width: 700px)").matches;
 
-  if (isMobile) {
-    if (currentSeries < series.length - 1) {
-      currentSeries++;
-    } else {
-      return;
-    }
+function goToNextSeries() {
+  if (currentSeries < series.length - 1) {
+    currentSeries++;
 
     series[currentSeries].scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-
-    return;
-  }
-
-  const current = Math.round(window.scrollY / window.innerHeight);
-
-  if (current < series.length - 1) {
-    series[current + 1].scrollIntoView({
       behavior: "smooth",
       block: "center"
     });
