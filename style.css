@@ -292,11 +292,11 @@ nav a.active {
     justify-content: center;
     gap: 15px;
     padding: 0 36px 10px 36px;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 .hero-gallery img {
-    height: 600px;      /* misma altura para ambas */
+    height: 680px;      /* misma altura para ambas */
     width: auto;        /* mantiene proporción */
     object-fit: cover;
 }
