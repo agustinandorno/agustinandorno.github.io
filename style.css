@@ -508,6 +508,10 @@ html.work-page body {
     opacity: 1;
 }
 
+.series-label {
+    font-style: italic;
+}
+
 @media (max-width: 700px) {
 
   body.work-page .work-series {
