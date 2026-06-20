@@ -754,7 +754,19 @@ html.work-page body {
   .contact-detail {
     font-size: 14px;
   }
+
+    .about-footer,
+  .contact-footer {
+    margin-top: 40px;
+  }
+
+  .about-page,
+  .contact-page {
+    padding-bottom: 80px;
+  }
+
 }
+
 
 .site-footer {
   text-align: center;
@@ -828,27 +840,4 @@ html.work-page body {
     gap: 40px 24px;
   }
 
-     html,
-  body {
-    height: auto;
-    min-height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-  }
-
-  body.about-page,
-  body.contact-page {
-    position: static;
-    height: auto;
-    min-height: 100dvh;
-    overflow-x: hidden;
-    overflow-y: visible;
-  }
-
-  .about-content,
-  .contact-content {
-    height: auto;
-    min-height: auto;
-    overflow: visible;
-  }
 }
