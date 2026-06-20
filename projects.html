@@ -85,7 +85,7 @@
   
 
   <main class="work-slider">
-    <section id="serie-2" class="work-project active-project">
+    <section id="serie-2" class="work-project">
       <div class="work-images">
         <img src="images/DSCF3001.jpg" alt="">
         <img src="images/DSCF3005.jpg" alt="">
@@ -124,7 +124,7 @@
 
 
   <main class="work-slider">
-    <section id="serie-3" class="work-project active-project">
+    <section id="serie-3" class="work-project">
       <div class="work-images">
         <img src="images/DSCF1000.jpg" alt="">
         <img src="images/DSCF1001.jpg" alt="">
@@ -161,7 +161,7 @@
 
 
   <main class="work-slider">
-    <section id="serie-4" class="work-project active-project">
+    <section id="serie-4" class="work-project">
       <div class="work-images">
         <img src="images/DSCF2000.jpg" alt="">
         <img src="images/DSCF2001.jpg" alt="">
@@ -219,7 +219,7 @@
 
 
   <main class="work-slider">
-    <section id="serie-5" class="work-project active-project">
+    <section id="serie-5" class="work-project">
       <div class="work-images">
         <img src="images/DSCF7000.jpg" alt="">
         <img src="images/DSCF7001.jpg" alt="">
@@ -256,7 +256,7 @@
 
 
   <main class="work-slider">
-    <section id="serie-6" class="work-project active-project">
+    <section id="serie-6" class="work-project">
       <div class="work-images">
         <img src="images/DSCF1100.jpg" alt="">
         <img src="images/DSCF1101.jpg" alt="">
@@ -289,7 +289,7 @@
 
 
   <main class="work-slider">
-    <section id="serie-7" class="work-project active-project">
+    <section id="serie-7" class="work-project">
       <div class="work-images">
         <img src="images/DSCF8000.jpg" alt="">
         <img src="images/DSCF8001.jpg" alt="">
@@ -327,7 +327,7 @@
 
 
   <main class="work-slider">
-    <section id="serie-8" class="work-project active-project">
+    <section id="serie-8" class="work-project">
       <div class="work-images">
         <img src="images/DSCF9000.jpg" alt="">
         <img src="images/DSCF9001.jpg" alt="">
@@ -482,6 +482,26 @@ document.querySelectorAll(".work-slider").forEach(slider => {
   let isScrolling = false;
 
   window.addEventListener("load", () => {
+  const hash = window.location.hash;
+
+  if (hash) {
+    const target = document.querySelector(hash);
+
+    if (target) {
+      const targetSeries = target.closest(".work-series");
+      const index = Array.from(series).indexOf(targetSeries);
+
+      if (index !== -1) {
+        currentSeries = index;
+        targetSeries.scrollIntoView({
+          behavior: "auto",
+          block: "center"
+        });
+        return;
+      }
+    }
+  }
+
   series[0].scrollIntoView({
     behavior: "auto",
     block: "center"
