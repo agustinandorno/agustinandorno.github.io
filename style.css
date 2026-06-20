@@ -827,4 +827,18 @@ html.work-page body {
     padding: 140px 20px 60px;
     gap: 40px 24px;
   }
+
+    body.about-page,
+  body.contact-page {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    min-height: 100dvh;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .about-page,
+  .contact-page {
+    touch-action: pan-y;
+  }
 }
