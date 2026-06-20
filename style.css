@@ -828,17 +828,27 @@ html.work-page body {
     gap: 40px 24px;
   }
 
-    body.about-page,
-  body.contact-page {
+     html,
+  body {
+    height: auto;
+    min-height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    height: auto;
-    min-height: 100dvh;
-    -webkit-overflow-scrolling: touch;
   }
 
-  .about-page,
-  .contact-page {
-    touch-action: pan-y;
+  body.about-page,
+  body.contact-page {
+    position: static;
+    height: auto;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  .about-content,
+  .contact-content {
+    height: auto;
+    min-height: auto;
+    overflow: visible;
   }
 }
