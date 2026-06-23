@@ -765,6 +765,22 @@ html.work-page body {
     padding-bottom: 80px;
   }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+  min-height: 100%;
+  touch-action: pan-y;
+}
+
+.about-page,
+.contact-page {
+  overflow: visible;
+  height: auto;
+  min-height: auto;
+}
 }
 
 
