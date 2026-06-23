@@ -781,6 +781,9 @@ body {
   height: auto;
   min-height: auto;
 }
+
+
+
 }
 
 
@@ -811,13 +814,14 @@ body {
   margin-top: 10vh;
 }
 
-.about-footer {
-  margin-top: -10vh;
-}
+  .about-footer,
+  .contact-footer {
+    margin-top: 40px;
+  }
 
-.contact-footer {
-  margin-top: -10vh;
-}
+  .about-page {
+    padding-bottom: 80px;
+  }
 
 .work-index {
   padding: 150px 40px 40px;
