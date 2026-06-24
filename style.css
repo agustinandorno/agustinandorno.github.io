@@ -86,6 +86,7 @@ nav {
   font-weight: 250;
   position: relative;
   top: -12px;
+  letter-spacing: 0.08em;
 }
 
 .home {
@@ -860,4 +861,139 @@ body {
     gap: 40px 24px;
   }
 
+}
+
+/* INTRO SCREEN */
+
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #fff;
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transition: opacity 0.9s ease, visibility 0s linear 0.9s;
+}
+
+#intro-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-center {
+  text-align: center;
+  transform: translateY(-20px);
+}
+
+.intro-logo {
+  width: 180px;
+  height: auto;
+  margin: 0 auto;
+
+  opacity: 0;
+  filter: invert(1) blur(14px);
+  transform: translateX(-1px);
+
+  animation: introLogoFade 1.4s ease forwards;
+}
+
+@keyframes introLogoFade {
+  from {
+    opacity: 0;
+    filter: invert(1) blur(14px);
+  }
+
+  to {
+    opacity: 1;
+    filter: invert(1) blur(0);
+  }
+}
+
+.intro-footer {
+  position: absolute;
+  left: 36px;
+  right: 36px;
+  bottom: 24px;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  opacity: 0.85;
+}
+
+#intro-screen.hide .intro-footer {
+  opacity: 0;
+}
+
+body.intro-active {
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .intro-logo {
+    width: 140px;
+  }
+
+  .intro-footer {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    font-size: 8px;
+  }
+}
+
+/* HOME REVEAL AFTER INTRO */
+
+body.intro-active .home-reveal-logo,
+body.intro-active .home-reveal-images {
+  opacity: 0;
+  filter: blur(12px);
+}
+
+.home-reveal-logo,
+.home-reveal-images {
+  opacity: 0;
+  filter: blur(12px);
+  transition: opacity 1.2s ease, filter 1.2s ease;
+}
+
+body.home-visible .home-reveal-logo {
+  opacity: 1;
+  filter: blur(0);
+  transition-delay: 0.2s;
+}
+
+body.home-visible .home-reveal-images {
+  opacity: 1;
+  filter: blur(0);
+  transition-delay: 0.9s;
+}
+
+/* WORK CARD HOVER EFFECT */
+
+body.work-page .work-card {
+  overflow: visible;
+}
+
+body.work-page .work-card img {
+  transition: transform 0.35s ease;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+body.work-page .work-card:hover img {
+  transform: scale(1.04);
 }
