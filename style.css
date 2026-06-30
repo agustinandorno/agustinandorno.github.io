@@ -66,14 +66,18 @@ body.work-page .site-header {
 
 .logo {
   display: inline-flex;
-  flex-direction: column;
-  width: 205px;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 6px;
+
+  width: auto;
+
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 25px;
-  font-weight: 100;
-  line-height: 0.82;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 .surname {
     margin-left: 0px;
@@ -233,10 +237,6 @@ nav {
   padding: 35px;
 }
 
-.logo {
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
 
 nav {
   display: flex;
@@ -868,8 +868,8 @@ body {
 #intro-screen {
   position: fixed;
   inset: 0;
-  background: #000;
-  color: #fff;
+  background: #ffffff;
+  color: #000;
   z-index: 99999;
 
   display: flex;
@@ -901,8 +901,10 @@ body {
   height: auto;
   margin: 0 auto;
 
+  /* antes estaba invertido porque el fondo era negro */
+  filter: blur(14px);
+
   opacity: 0;
-  filter: invert(1) blur(14px);
   transform: translateX(-1px);
 
   animation: introLogoFade 1.4s ease forwards;
@@ -911,12 +913,12 @@ body {
 @keyframes introLogoFade {
   from {
     opacity: 0;
-    filter: invert(1) blur(14px);
+    filter: blur(14px);
   }
 
   to {
     opacity: 1;
-    filter: invert(1) blur(0);
+    filter: blur(0);
   }
 }
 
@@ -931,28 +933,27 @@ body {
 
   font-size: 11px;
   letter-spacing: 0.12em;
-  opacity: 0.85;
-}
-
-#intro-screen.hide .intro-footer {
-  opacity: 0;
+  color: #111;
+  opacity: 0.8;
 }
 
 body.intro-active {
   overflow: hidden;
 }
 
-@media (max-width: 700px) {
-  .intro-logo {
-    width: 140px;
+@media (max-width:700px){
+
+  .intro-logo{
+    width:140px;
   }
 
-  .intro-footer {
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    font-size: 8px;
+  .intro-footer{
+    left:20px;
+    right:20px;
+    bottom:20px;
+    font-size:8px;
   }
+
 }
 
 /* HOME REVEAL AFTER INTRO */
@@ -997,3 +998,143 @@ body.work-page .work-card img {
 body.work-page .work-card:hover img {
   transform: scale(1.04);
 }
+
+/* INDEX MENU RIGHT - LOGO LEFT */
+
+body.home-page .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding: 21px 36px 5px;
+  background: transparent;
+  backdrop-filter: none;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+body.home-page .site-header .logo {
+  color: #111;
+}
+
+body.home-page .site-header nav {
+  position: absolute;
+  top: 78px;
+  left: 40px;
+  right: auto;
+
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10px;
+  row-gap: 6px;
+  align-items: center;
+  justify-items: start;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: #111;
+  z-index: 10000;
+}
+
+body.home-page .site-header nav a:nth-child(1),
+body.home-page .site-header nav a:nth-child(2),
+body.home-page .site-header nav a:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+body.home-page .site-header nav a:nth-child(4) {
+  grid-column: 1;
+}
+
+body.home-page .site-header nav a:nth-child(5) {
+  grid-column: 2;
+}
+
+body.home-page .site-header nav a {
+  color: #111;
+  border-bottom: none;
+}
+
+body.home-page .site-header nav a:hover {
+  border-bottom: 1px solid #111;
+}
+
+body.home-page .site-header nav svg {
+  color: #111;
+  stroke: #111;
+}
+
+/* INDEX FOOTER ONLY */
+
+body.home-page .site-footer {
+  display: none;
+}
+
+.home-index-footer {
+  position: fixed;
+  left: 40px;
+  right: 40px;
+  bottom: 24px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+
+  color: #111;
+  z-index: 9998;
+
+  pointer-events: none;
+}
+
+.home-index-footer a,
+.home-index-footer span {
+  color: #111;
+  text-decoration: none;
+}
+
+.home-index-footer a {
+  pointer-events: auto;
+  transition: opacity 0.25s ease;
+}
+
+.home-index-footer a:hover {
+  opacity: 0.55;
+}
+
+.home-reveal-footer {
+  opacity: 0;
+  filter: blur(12px);
+  transition: opacity 1.2s ease, filter 1.2s ease;
+}
+
+body.home-visible .home-reveal-footer {
+  opacity: 1;
+  filter: blur(0);
+  transition-delay: 1.1s;
+}
+
+@media (max-width: 700px) {
+  .home-index-footer {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+  }
+}
+
