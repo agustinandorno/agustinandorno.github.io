@@ -1688,7 +1688,7 @@ body:not(.home-page) .site-header {
 @media (min-width: 701px) {
   body.home-page .home-index-footer {
     left: auto;
-    right: 40px;
+    right: 25px;
     bottom: 8px;
 
     display: flex;
@@ -1729,4 +1729,44 @@ body:not(.home-page) .site-header {
     transition-delay: 1s;
   }
 
+}
+
+/* INDEX SINGLE IMAGE POSITION TEST */
+
+@media (min-width: 701px) {
+  body.home-page .hero-gallery.single-home-image {
+    transform: translateX(615px) !important;
+  }
+}
+
+/* INDEX DESKTOP FOOTER LEFT STACK */
+
+@media (min-width: 701px) {
+  body.home-page .home-index-footer {
+    left: 40px;
+    right: auto;
+    bottom: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+
+  body.home-page .home-index-footer span {
+    order: 1;
+  }
+
+  body.home-page .home-index-footer a {
+    order: 2;
+  }
+}
+
+/* INDEX DESKTOP FOOTER FONT SIZE */
+
+@media (min-width: 701px) {
+  body.home-page .home-index-footer {
+    font-size: 7px;
+  }
 }
