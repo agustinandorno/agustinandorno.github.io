@@ -12,5 +12,5 @@ if (introScreen) {
       document.body.classList.add("home-visible");
     }, 900);
 
-  }, 2600);
+  }, 1200);
 }
