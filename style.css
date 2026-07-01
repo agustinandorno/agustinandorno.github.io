@@ -871,15 +871,15 @@ body.home-page .home-index-footer span {
   display: block;
 }
 
-.work-card:nth-child(1) { transform: translateY(-20px); }
-.work-card:nth-child(2) { transform: translateY(20px); }
-.work-card:nth-child(3) { transform: translateY(-45px); }
-.work-card:nth-child(4) { transform: translateY(20px); }
+.work-card:nth-child(1) { transform: translateY(-80px); }
+.work-card:nth-child(2) { transform: translateY(0px); }
+.work-card:nth-child(3) { transform: translateY(-80px); }
+.work-card:nth-child(4) { transform: translateY(0px); }
 
-.work-card:nth-child(5) { transform: translateY(-10px); }
-.work-card:nth-child(6) { transform: translateY(75px); }
-.work-card:nth-child(7) { transform: translateY(-30px); }
-.work-card:nth-child(8) { transform: translateY(75px); }
+.work-card:nth-child(5) { transform: translateY(-35px); }
+.work-card:nth-child(6) { transform: translateY(45px); }
+.work-card:nth-child(7) { transform: translateY(-35px); }
+.work-card:nth-child(8) { transform: translateY(45px); }
 
 @media (max-width: 800px) {
   .work-index {
@@ -1803,5 +1803,25 @@ body:not(.home-page) .site-header .logo.logo-image.small-logo .logo-mark {
 
   body:not(.home-page) .site-header .logo.logo-image.small-logo {
     margin-right: auto;
+  }
+}
+
+/* WORK MOBILE ASYMMETRIC GRID */
+
+@media (max-width: 800px) {
+  body.work-page .work-index {
+    gap: 44px 24px;
+  }
+
+  body.work-page .work-card {
+    transform: none !important;
+  }
+
+  body.work-page .work-card:nth-child(even) {
+    transform: translateY(60px) !important;
+  }
+
+  body.work-page .work-card:nth-child(odd) {
+    transform: translateY(0) !important;
   }
 }
