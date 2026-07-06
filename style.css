@@ -2089,3 +2089,36 @@ body:not(.home-page) .site-header .logo.logo-image.small-logo .logo-mark {
   }
 
 }
+
+/* PROJECTS ACTIVE SERIES ONLY */
+
+body.projects-body .work-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+body.projects-body .work-project {
+  display: none;
+}
+
+body.projects-body .work-project.active-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+body.projects-body .work-project.active-project .work-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+body.projects-body .work-project.active-project .work-images img {
+  height: calc(100dvh - 120px);
+  width: auto;
+  max-width: calc(100vw - 120px);
+  object-fit: contain;
+}
