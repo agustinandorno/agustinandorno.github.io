@@ -1826,3 +1826,299 @@ body:not(.home-page) .site-header .logo.logo-image.small-logo .logo-mark {
   }
 }
 
+/* IPAD PORTRAIT ONLY */
+
+@media (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse) {
+
+  body.home-page .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 220px;
+    height: 100dvh;
+
+    padding: 34px 28px;
+
+    background: white;
+    z-index: 9999;
+  }
+
+  body.home-page .home-series {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 220px;
+
+    width: calc(100vw - 220px);
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  body.home-page .hero-gallery {
+    height: 100dvh;
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+
+    transform: translateX(0);
+  }
+
+  body.home-page .hero-gallery img {
+    height: 100dvh;
+    width: auto;
+    max-width: none;
+    object-fit: cover;
+  }
+
+  body.home-page .home-mobile {
+    display: none;
+  }
+
+}
+
+/* IPAD PORTRAIT FOOTER FIX ONLY */
+
+@media (min-width: 701px) and (max-width: 1024px) and (orientation: portrait) and (hover: none) and (pointer: coarse) {
+
+  body.home-page .home-index-footer {
+    position: fixed;
+    left: 44px;
+    right: auto;
+    bottom: 34px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 4px;
+
+    font-size: 8px;
+    letter-spacing: 0.1em;
+
+    color: #111;
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+
+    z-index: 10000;
+  }
+
+  body.home-page .home-index-footer span,
+  body.home-page .home-index-footer a {
+    color: #111;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+
+  body.home-page .home-index-footer span {
+    order: 1;
+  }
+
+  body.home-page .home-index-footer a {
+    order: 2;
+  }
+
+}
+
+/* IPAD INTERNAL PAGES FIX */
+
+@media (min-width: 701px) and (max-width: 1366px) and (hover: none) and (pointer: coarse) {
+
+  body.about-body .about-page,
+  body.contact-body .about-page,
+  body.privacy-body .about-page {
+    padding: 90px 48px 100px;
+    width: 100%;
+    max-width: none;
+    overflow: visible;
+  }
+
+  body.about-body .about-content,
+  body.contact-body .about-content,
+  body.privacy-body .about-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+    gap: 48px;
+    align-items: start;
+    justify-content: center;
+    width: 100%;
+  }
+
+  body.about-body .about-text,
+  body.contact-body .about-text,
+  body.privacy-body .about-text {
+    width: auto;
+    max-width: 420px;
+  }
+
+  body.about-body .about-page h1,
+  body.contact-body .about-page h1,
+  body.privacy-body .about-page h1 {
+    font-size: 64px;
+    line-height: 0.9;
+    margin: 0 0 34px;
+  }
+
+  body.about-body .about-page p,
+  body.contact-body .about-page p,
+  body.privacy-body .about-page p {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  body.about-body .about-image,
+  body.contact-body .about-image,
+  body.privacy-body .about-image {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  body.about-body .about-image img,
+  body.contact-body .about-image img,
+  body.privacy-body .about-image img {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+/* WORK TABLET PORTRAIT ONLY */
+
+@media (min-width: 701px) and (max-width: 1366px) and (orientation: portrait) {
+
+  body.work-page .work-index {
+    padding: 190px 70px 90px;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 90px 80px;
+
+    align-items: center;
+  }
+
+  body.work-page .work-card img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+  }
+
+}
+
+/* ABOUT + CONTACT + PRIVACY TABLET PORTRAIT STACK */
+
+@media (min-width: 701px) and (max-width: 1366px) and (orientation: portrait) {
+
+  body.about-body,
+  body.contact-body,
+  body.privacy-body {
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  body.about-body .about-page,
+  body.contact-body .about-page,
+  body.privacy-body .about-page {
+    height: calc(100dvh - 90px);
+    padding: 95px 9vw 70px;
+    width: 100%;
+    max-width: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.about-body .about-content,
+  body.contact-body .about-content,
+  body.privacy-body .about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    width: min(72vw, 620px);
+    gap: 38px;
+    margin: 0 auto;
+  }
+
+  body.about-body .about-text,
+  body.contact-body .about-text,
+  body.privacy-body .about-text {
+    width: 100%;
+    max-width: none;
+  }
+
+  body.about-body .about-page h1,
+  body.contact-body .about-page h1,
+  body.privacy-body .about-page h1 {
+    font-size: 56px;
+    line-height: 0.9;
+    margin: 0 0 28px;
+  }
+
+  body.about-body .about-page p,
+  body.contact-body .about-page p,
+  body.privacy-body .about-page p {
+    font-size: 12px;
+    line-height: 1.4;
+    max-width: 100%;
+  }
+
+  body.about-body .about-image,
+  body.contact-body .about-image,
+  body.privacy-body .about-image {
+    width: 100%;
+    max-width: none;
+  }
+
+  body.about-body .about-image img,
+  body.contact-body .about-image img,
+  body.privacy-body .about-image img {
+    width: 100%;
+    height: 60dvh;
+    object-fit: contain;
+  }
+
+  body.about-body .site-footer,
+  body.contact-body .site-footer,
+  body.privacy-body .site-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 26px;
+  }
+
+}
+
+/* PROJECTS ACTIVE SERIES ONLY */
+
+body.projects-body .work-slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+body.projects-body .work-project {
+  display: none;
+}
+
+body.projects-body .work-project.active-project {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+body.projects-body .work-project.active-project .work-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+body.projects-body .work-project.active-project .work-images img {
+  height: calc(100dvh - 120px);
+  width: auto;
+  max-width: calc(100vw - 120px);
+  object-fit: contain;
+}
