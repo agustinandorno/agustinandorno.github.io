@@ -881,6 +881,9 @@ body.home-page .home-index-footer span {
 .work-card:nth-child(7) { transform: translateY(-35px); }
 .work-card:nth-child(8) { transform: translateY(45px); }
 
+.work-card:nth-child(9) { transform: translateY( 0px); }
+.work-card:nth-child(10) { transform: translateY(80px); }
+
 @media (max-width: 800px) {
   .work-index {
     grid-template-columns: repeat(2, 1fr);
