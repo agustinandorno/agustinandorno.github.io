@@ -2092,3 +2092,74 @@ body:not(.home-page) .site-header .logo.logo-image.small-logo .logo-mark {
   }
 
 }
+
+/* PROJECTS: ONE IMAGE AT A TIME — PC ONLY */
+
+@media (min-width: 701px) and (hover: hover) and (pointer: fine) {
+
+  body.projects-body .work-series {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+
+    overflow: hidden;
+  }
+
+  body.projects-body .work-slider {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+
+    padding: 40px 0 10px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+
+  body.projects-body .work-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  body.projects-body .work-project {
+    width: 100%;
+    height: 100%;
+  }
+
+  body.projects-body .work-images {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    gap: 16px;
+  }
+
+  body.projects-body .work-images img {
+    flex: 0 0 100%;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+
+  body.projects-body .work-caption {
+    margin: 8px 0 24px;
+  }
+
+}
