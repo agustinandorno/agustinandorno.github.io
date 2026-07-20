@@ -1793,8 +1793,19 @@ body:not(.home-page) .site-header .logo.logo-image.small-logo .logo-mark {
 
 @media (max-width: 700px) {
   body:not(.home-page) .site-header .logo.logo-image.small-logo .logo-mark {
-    width: 20px;
+    width: 30px;
   }
+}
+
+/* LOGO INNER PAGES — IPAD ONLY */
+@media (min-width: 701px) and (max-width: 1366px)
+       and (hover: none)
+       and (pointer: coarse) {
+
+  body:not(.home-page) .site-header .logo.logo-image.small-logo .logo-mark {
+    width: 30px;
+  }
+
 }
 
 /* INNER PAGES DESKTOP LOGO LEFT */
