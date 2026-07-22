@@ -2269,3 +2269,26 @@ body.projects-body .work-caption {
     width: auto !important;
   }
 }
+
+/* INDEX — FONDO SOLO DETRÁS DEL MENÚ EN MÓVIL */
+
+@media (max-width: 700px) {
+
+  body.home-page .site-header {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  body.home-page .site-header nav {
+    width: max-content;
+
+    margin-top: 10px;
+    padding: 8px 10px;
+
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+
+}
