@@ -2240,32 +2240,24 @@ body.projects-body .work-caption {
 
 
 /* IPAD VERTICAL */
-
 @media (min-width: 701px) and (max-width: 1366px)
        and (orientation: portrait) {
 
-  body.home-page .site-header {
-    width: 25vw !important;
-  }
-
   body.home-page .home-series {
-    left: 25vw !important;
+    left: 50vw !important;
+    right: 0 !important;
     width: auto !important;
   }
 }
 
 
 /* IPAD HORIZONTAL */
-
 @media (min-width: 701px) and (max-width: 1366px)
        and (orientation: landscape) {
 
-  body.home-page .site-header {
-    width: 32vw !important;
-  }
-
   body.home-page .home-series {
-    left: 32vw !important;
+    left: 18vw !important;
+    right: 0 !important;
     width: auto !important;
   }
 }
