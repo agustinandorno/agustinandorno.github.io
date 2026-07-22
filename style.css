@@ -2244,7 +2244,7 @@ body.projects-body .work-caption {
        and (orientation: portrait) {
 
   body.home-page .home-series {
-    left: 50vw !important;
+    left:0vw !important;
     right: 0 !important;
     width: auto !important;
   }
@@ -2256,7 +2256,7 @@ body.projects-body .work-caption {
        and (orientation: landscape) {
 
   body.home-page .home-series {
-    left: 18vw !important;
+    left: 0vw !important;
     right: 0 !important;
     width: auto !important;
   }
