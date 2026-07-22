@@ -2284,3 +2284,21 @@ body.projects-body .work-caption {
   }
 
 }
+
+/* FOTO DE PORTADA SEGÚN DISPOSITIVO */
+
+body.home-page .home-photo-ipad {
+  display: none;
+}
+
+/* IPAD */
+@media (min-width: 701px) and (max-width: 1366px) {
+
+  body.home-page .home-photo-desktop {
+    display: none !important;
+  }
+
+  body.home-page .home-photo-ipad {
+    display: block !important;
+  }
+}
