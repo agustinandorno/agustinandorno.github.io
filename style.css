@@ -2170,3 +2170,102 @@ body.projects-body .work-images img {
 body.projects-body .work-caption {
   margin: 8px 16px 24px;
 }
+
+/* INDEX — PORTADA IPAD: CONFIGURACIÓN LIMPIA */
+
+@media (min-width: 701px) and (max-width: 1366px) {
+
+  body.home-page {
+    overflow: hidden !important;
+  }
+
+  /* En iPad usamos la portada principal, no la versión móvil */
+  body.home-page .home-series {
+    display: block !important;
+
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    height: 100dvh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    transform: none !important;
+    overflow: hidden !important;
+  }
+
+  body.home-page .home-mobile {
+    display: none !important;
+  }
+
+  body.home-page .hero-gallery {
+    position: absolute !important;
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 0 !important;
+
+    transform: none !important;
+
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+
+    overflow: hidden !important;
+  }
+
+  body.home-page .hero-gallery img {
+    height: 100% !important;
+    min-height: 100% !important;
+
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    flex: 1 1 auto !important;
+
+    object-fit: cover !important;
+    object-position: center center !important;
+
+    display: block !important;
+  }
+}
+
+
+/* IPAD VERTICAL */
+
+@media (min-width: 701px) and (max-width: 1366px)
+       and (orientation: portrait) {
+
+  body.home-page .site-header {
+    width: 25vw !important;
+  }
+
+  body.home-page .home-series {
+    left: 25vw !important;
+    width: auto !important;
+  }
+}
+
+
+/* IPAD HORIZONTAL */
+
+@media (min-width: 701px) and (max-width: 1366px)
+       and (orientation: landscape) {
+
+  body.home-page .site-header {
+    width: 32vw !important;
+  }
+
+  body.home-page .home-series {
+    left: 32vw !important;
+    width: auto !important;
+  }
+}
