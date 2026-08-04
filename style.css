@@ -871,18 +871,21 @@ body.home-page .home-index-footer span {
   display: block;
 }
 
-.work-card:nth-child(1) { transform: translateY(-80px); }
-.work-card:nth-child(2) { transform: translateY(0px); }
-.work-card:nth-child(3) { transform: translateY(-80px); }
-.work-card:nth-child(4) { transform: translateY(0px); }
+/* WORK — DESFASE AUTOMÁTICO DE TARJETAS EN PC */
 
-.work-card:nth-child(5) { transform: translateY(-35px); }
-.work-card:nth-child(6) { transform: translateY(45px); }
-.work-card:nth-child(7) { transform: translateY(-35px); }
-.work-card:nth-child(8) { transform: translateY(45px); }
+@media (min-width: 801px) {
 
-.work-card:nth-child(9) { transform: translateY( 0px); }
-.work-card:nth-child(10) { transform: translateY(80px); }
+  body.work-page .work-card {
+    margin-top: 0;
+    transform: translateY(-80px);
+  }
+
+  body.work-page .work-card:nth-child(4n + 2),
+  body.work-page .work-card:nth-child(4n) {
+    margin-top: 80px;
+  }
+
+}
 
 @media (max-width: 800px) {
   .work-index {
