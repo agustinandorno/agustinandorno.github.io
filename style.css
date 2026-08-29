@@ -2311,19 +2311,76 @@ body.home-page .hero-gallery img.home-photo-ipad {
   }
 }
 
-/* PROJECTS — FOOTER SOLO AL HACER SCROLL */
+/* PROJECTS — NUEVO LAYOUT PC */
 
-body.projects-body {
-  height: auto;
-  min-height: 100dvh;
-  overflow-y: auto;
-}
+@media (min-width: 801px) and (hover: hover) and (pointer: fine) {
 
-body.projects-body .work-series {
-  height: 100dvh;
-  min-height: 100dvh;
-}
+  /* Sin scroll vertical */
+  body.projects-body {
+    height: 100dvh;
+    overflow-y: hidden;
+  }
 
-body.projects-body .site-footer {
-  position: static !important;
+
+  /* Cada proyecto ocupa exactamente una pantalla */
+  body.projects-body .work-series {
+    position: relative;
+
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+
+    margin: 0;
+    overflow: hidden;
+  }
+
+
+  /* Título arriba a la izquierda */
+  body.projects-body .work-caption {
+    position: absolute;
+
+    top: 150px;
+    left: 44px;
+
+    width: 245px;
+
+    margin: 0;
+
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.4;
+    color: #808080;
+
+    z-index: 1000;
+  }
+
+
+  /* Primera línea: tipo de serie */
+  body.projects-body .work-caption .series-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-style: italic;
+  }
+
+
+  /* Footer donde antes estaba el título */
+  body.projects-body .site-footer {
+    position: fixed !important;
+
+    left: 50%;
+    bottom: 12px;
+
+    transform: translateX(-50%);
+
+    width: max-content;
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+
+    z-index: 9999;
+  }
+
 }
