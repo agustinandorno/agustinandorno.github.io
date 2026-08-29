@@ -2311,9 +2311,19 @@ body.home-page .hero-gallery img.home-photo-ipad {
   }
 }
 
-/* PROJECTS — ONE PROJECT PER PAGE */
+/* PROJECTS — FOOTER SOLO AL HACER SCROLL */
 
 body.projects-body {
+  height: auto;
+  min-height: 100dvh;
+  overflow-y: auto;
+}
+
+body.projects-body .work-series {
   height: 100dvh;
-  overflow-y: hidden;
+  min-height: 100dvh;
+}
+
+body.projects-body .site-footer {
+  position: static !important;
 }
