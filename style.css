@@ -2310,3 +2310,10 @@ body.home-page .hero-gallery img.home-photo-ipad {
     display: block !important;
   }
 }
+
+/* PROJECTS — ONE PROJECT PER PAGE */
+
+body.projects-body {
+  height: 100dvh;
+  overflow-y: hidden;
+}

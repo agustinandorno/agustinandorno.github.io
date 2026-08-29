@@ -662,6 +662,41 @@
 </script>
 
 <script>
+document.addEventListener("keydown", function(event) {
+
+  /* Buscar el proyecto que está actualmente visible */
+  const visibleSeries = Array.from(
+    document.querySelectorAll(".work-series")
+  ).find(series => getComputedStyle(series).display !== "none");
+
+  if (!visibleSeries) return;
+
+  /* Flecha derecha del teclado */
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+
+    const rightButton = visibleSeries.querySelector(".work-arrow.right");
+
+    if (rightButton) {
+      nextProject(rightButton);
+    }
+  }
+
+  /* Flecha izquierda del teclado */
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+
+    const leftButton = visibleSeries.querySelector(".work-arrow.left");
+
+    if (leftButton) {
+      previousProject(leftButton);
+    }
+  }
+
+});
+</script>
+
+<script>
 document.querySelectorAll(".work-slider").forEach(slider => {
     let isDown = false;
     let startX;
@@ -694,86 +729,30 @@ document.querySelectorAll(".work-slider").forEach(slider => {
 </footer>
 
 <script>
-  const series = document.querySelectorAll(".work-series, .site-footer");
-  let currentSeries = 0;
-  let isScrolling = false;
+document.addEventListener("DOMContentLoaded", () => {
 
-  window.addEventListener("load", () => {
+  const allSeries = document.querySelectorAll(".work-series");
   const hash = window.location.hash;
 
+  /* Ocultar todos los proyectos */
+  allSeries.forEach(series => {
+    series.style.display = "none";
+  });
+
+  /* Mostrar solamente el proyecto indicado en la URL */
   if (hash) {
     const target = document.querySelector(hash);
 
     if (target) {
-      const targetSeries = target.closest(".work-series");
-      const index = Array.from(series).indexOf(targetSeries);
+      const selectedSeries = target.closest(".work-series");
 
-      if (index !== -1) {
-        currentSeries = index;
-        targetSeries.scrollIntoView({
-          behavior: "auto",
-          block: "center"
-        });
-        return;
+      if (selectedSeries) {
+        selectedSeries.style.display = "";
       }
     }
   }
-
-  series[0].scrollIntoView({
-    behavior: "auto",
-    block: "center"
-  });
 });
-
-  window.addEventListener("wheel", function(event) {
-    event.preventDefault();
-    if (isScrolling) return;
-
-    if (event.deltaY > 0 && currentSeries < series.length - 1) {
-      currentSeries++;
-    } else if (event.deltaY < 0 && currentSeries > 0) {
-      currentSeries--;
-    } else {
-      return;
-    }
-
-    isScrolling = true;
-
-    series[currentSeries].scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-
-    setTimeout(() => {
-      isScrolling = false;
-    }, 900);
-  }, { passive: false });
-
-function goToPreviousSeries() {
-  if (currentSeries > 0) {
-    currentSeries--;
-
-    series[currentSeries].scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }
-}
-
-function goToNextSeries() {
-  if (currentSeries < series.length - 1) {
-    currentSeries++;
-
-    series[currentSeries].scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }
-}
-  
 </script>
-<div class="work-back-arrow" onclick="goToPreviousSeries()">↑ BACK</div>
-<div class="work-hover-arrow" onclick="goToNextSeries()">↓ MORE</div>
-  
+
 </body>
 </html>
