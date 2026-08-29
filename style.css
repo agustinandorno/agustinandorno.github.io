@@ -2339,8 +2339,8 @@ body.home-page .hero-gallery img.home-photo-ipad {
   body.projects-body .work-caption {
     position: absolute;
 
-    top: 150px;
-    left: 44px;
+    top: 135px;
+    left: 40px;
 
     width: 245px;
 
@@ -2367,20 +2367,20 @@ body.home-page .hero-gallery img.home-photo-ipad {
 
   /* Footer donde antes estaba el título */
   body.projects-body .site-footer {
-    position: fixed !important;
+  position: fixed !important;
 
-    left: 50%;
-    bottom: 12px;
+  left: 40px;
+  bottom: 18px;
 
-    transform: translateX(-50%);
+  transform: none;
 
-    width: max-content;
-    margin: 0;
-    padding: 0;
+  width: auto;
+  margin: 0;
+  padding: 0;
 
-    text-align: center;
+  text-align: left;
 
-    z-index: 9999;
-  }
+  z-index: 9999;
+}
 
 }
