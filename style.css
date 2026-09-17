@@ -2626,3 +2626,60 @@ body.home-page.video-cover .home-cover-video {
     padding: 0;
   }
 }
+
+/* =========================================
+   VIDEO COVER — ANULAR POSICIONES ANTIGUAS
+   ========================================= */
+
+body.home-page.video-cover .home-series {
+  position: fixed !important;
+
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+
+  left: 0 !important;
+
+  width: 100vw !important;
+  height: 100dvh !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  transform: none !important;
+
+  overflow: hidden !important;
+}
+
+
+body.home-page.video-cover .hero-gallery {
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+
+  transform: none !important;
+
+  overflow: hidden !important;
+}
+
+
+body.home-page.video-cover .home-cover-video {
+  width: auto !important;
+  height: 100% !important;
+
+  max-width: 100% !important;
+  max-height: 100% !important;
+
+  object-fit: contain !important;
+
+  display: block !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+}
