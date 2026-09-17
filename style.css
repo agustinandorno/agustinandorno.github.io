@@ -2498,41 +2498,6 @@ body.home-page .hero-gallery img.home-photo-ipad {
 }
 
 
-/* =========================================
-   BOTÓN SKIP
-   ========================================= */
-
-#skip-video {
-  position: absolute;
-
-  left: 50%;
-  bottom: 28px;
-
-  transform: translateX(-50%);
-
-  border: none;
-  padding: 8px 12px;
-
-  background: transparent;
-
-  color: #000;
-
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.18em;
-
-  cursor: pointer;
-
-  opacity: 0.75;
-
-  z-index: 2;
-}
-
-
-#skip-video:hover {
-  opacity: 1;
-}
 
 /* =========================================
    VIDEO COMO PORTADA DEL INDEX
