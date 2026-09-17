@@ -2384,3 +2384,152 @@ body.home-page .hero-gallery img.home-photo-ipad {
 }
 
 }
+
+
+/* =========================================
+   VIDEO ENTRE INTRO E INDEX
+   ========================================= */
+
+#video-screen {
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100dvh;
+
+  background: transparent;
+
+  /* Centrar el video */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10000;
+
+  /*
+    El contenedor NO cambia de opacidad.
+    De esta manera el filtro permanece constante.
+  */
+  opacity: 1;
+  visibility: hidden;
+
+  transition: none;
+}
+
+
+/* =========================================
+   FILTRO FIJO ENTRE EL INDEX Y EL VIDEO
+   ========================================= */
+
+#video-screen::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  /* Transparencia fija del index */
+  background: rgba(255, 255, 255, 0.50);
+
+  /* Desenfoque fijo del index */
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  z-index: 0;
+  pointer-events: none;
+
+  /* El filtro NO hace transición */
+  transition: none;
+}
+
+
+/* =========================================
+   MOSTRAR PANTALLA DEL VIDEO
+   ========================================= */
+
+#video-screen.show {
+  visibility: visible;
+}
+
+
+/* Durante la salida mantenemos visible el filtro */
+#video-screen.hide {
+  visibility: visible;
+}
+
+
+/* =========================================
+   VIDEO
+   ========================================= */
+
+#intro-video {
+  position: relative;
+  z-index: 1;
+
+  width: auto;
+  height: auto;
+
+  /* Margen arriba y abajo */
+  max-width: 100%;
+  max-height: 86dvh;
+
+  display: block;
+
+  /*
+    Solamente el video hace fade.
+    El filtro detrás permanece igual.
+  */
+  opacity: 0;
+
+  transition: opacity 0.9s ease;
+}
+
+
+/* VIDEO APARECIENDO */
+
+#video-screen.show #intro-video {
+  opacity: 1;
+}
+
+
+/* VIDEO DESAPARECIENDO */
+
+#video-screen.hide #intro-video {
+  opacity: 0;
+}
+
+
+/* =========================================
+   BOTÓN SKIP
+   ========================================= */
+
+#skip-video {
+  position: absolute;
+
+  left: 50%;
+  bottom: 28px;
+
+  transform: translateX(-50%);
+
+  border: none;
+  padding: 8px 12px;
+
+  background: transparent;
+
+  color: #000;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+
+  cursor: pointer;
+
+  opacity: 0.75;
+
+  z-index: 2;
+}
+
+
+#skip-video:hover {
+  opacity: 1;
+}
