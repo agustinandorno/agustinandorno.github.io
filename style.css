@@ -2533,3 +2533,87 @@ body.home-page .hero-gallery img.home-photo-ipad {
 #skip-video:hover {
   opacity: 1;
 }
+
+/* =========================================
+   VIDEO COMO PORTADA DEL INDEX
+   ========================================= */
+
+
+/* Por defecto el video de portada está oculto */
+body.home-page .home-cover-video {
+  display: none;
+}
+
+
+/* Cuando body tiene la clase video-cover,
+   ocultamos las fotos de portada */
+body.home-page.video-cover .hero-gallery > img.home-photo-desktop,
+body.home-page.video-cover .hero-gallery > img.home-photo-ipad {
+  display: none !important;
+}
+
+
+/* Y mostramos el video */
+body.home-page.video-cover .home-cover-video {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+/* =========================================
+   VIDEO PORTADA — AJUSTE DESKTOP
+   ========================================= */
+
+@media (min-width: 701px) {
+
+  body.home-page.video-cover .home-series {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 28vw;
+
+    width: auto;
+    height: 100dvh;
+
+    margin: 0;
+    padding: 0;
+
+    transform: none;
+    overflow: hidden;
+  }
+
+  body.home-page.video-cover .hero-gallery {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+    gap: 0;
+
+    transform: none;
+
+    display: flex;
+    align-items: stretch;
+  }
+
+  body.home-page.video-cover .home-cover-video {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+    max-height: none;
+
+    object-fit: cover;
+    object-position: center;
+
+    margin: 0;
+    padding: 0;
+  }
+}
