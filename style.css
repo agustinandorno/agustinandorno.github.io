@@ -2292,7 +2292,7 @@ body.projects-body .work-caption {
 @media (max-width: 700px) {
 
   body.home-page .site-header {
-    transform: translate(-15px, 0);
+    transform: translate(-30px, 0);
   }
 
 }
