@@ -2744,3 +2744,304 @@ body.home-page.video-cover .home-cover-video {
   }
 
 }
+
+/* =========================================
+   PROJECTS — TABLERO CONGELADO DE FONDO
+   ========================================= */
+
+
+/* CONTENEDOR DE TODO EL FONDO */
+
+body.projects-body #project-board-background {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100vw;
+  height: 100dvh;
+
+  overflow: hidden;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* PROJECT-BOARD REAL CARGADO DETRÁS */
+
+body.projects-body #project-board-frame {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  pointer-events: none;
+
+  opacity: 1;
+
+  /* SIN DESENFOQUE */
+  filter: none !important;
+
+  transform: none;
+}
+
+
+/* CAPA BLANCA TRANSLÚCIDA */
+
+body.projects-body .project-board-filter {
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  pointer-events: none;
+}
+
+
+/* EL VISOR ACTUAL DE PROJECTS QUEDA ENCIMA */
+
+body.projects-body .work-series {
+  position: relative;
+
+  z-index: 20;
+}
+
+
+/* HEADER ENCIMA DEL FONDO */
+
+body.projects-body .site-header {
+  z-index: 30;
+}
+
+
+/* =========================================
+   X — VOLVER AL TABLERO
+   ========================================= */
+
+body.projects-body .project-close {
+  position: fixed;
+
+  top: 30px;
+  right: 28px;
+
+  z-index: 50;
+
+  color: #111;
+
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 38px;
+  font-weight: 200;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  opacity: 0.85;
+
+  transition: opacity 0.25s ease;
+}
+
+
+body.projects-body .project-close:hover {
+  opacity: 1;
+}
+
+/* =========================================
+   PROJECTS VIEWER — OCULTAR HEADER
+   ========================================= */
+
+body.projects-body .site-header .logo,
+body.projects-body .site-header nav {
+  display: none !important;
+}
+
+
+/* Evitar que el header deje un fondo blanco o blur */
+
+body.projects-body .site-header {
+  background: transparent !important;
+
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+
+  box-shadow: none !important;
+}
+
+/* =========================================
+   PROJECTS VIEWER — HEADER SOLO EN EL FONDO
+   ========================================= */
+
+body.projects-body > .site-header {
+  visibility: hidden !important;
+}
+
+/* =========================================
+   IPAD + PC — FLECHAS SIN RECTÁNGULO
+   ========================================= */
+
+@media (min-width: 701px) {
+
+  body.projects-body .work-arrow {
+    background: transparent !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  body.projects-body .work-arrow:hover {
+    background: transparent !important;
+  }
+
+}
+
+/* =========================================
+   PROJECTS VIEWER
+   SOLO IPAD + COMPUTADORA
+   ========================================= */
+
+@media (min-width: 701px) {
+
+  /* TABLERO DEL PROYECTO DETRÁS */
+
+  body.projects-body #project-board-background {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100dvh;
+
+    overflow: hidden;
+
+    z-index: 0;
+
+    pointer-events: none;
+  }
+
+
+  body.projects-body #project-board-frame {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+
+    pointer-events: none;
+
+    opacity: 1;
+
+    filter: none !important;
+
+    transform: none;
+  }
+
+
+  /* FILTRO BLANCO SOBRE EL TABLERO */
+
+  body.projects-body .project-board-filter {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    pointer-events: none;
+  }
+
+
+  /* DEJAR TRANSPARENTES LAS CAPAS DEL VISOR */
+
+  body.projects-body,
+  body.projects-body .work-series,
+  body.projects-body .work-slider,
+  body.projects-body .work-project,
+  body.projects-body .work-images {
+    background: transparent !important;
+  }
+
+
+  /* FOTO + FLECHAS DELANTE */
+
+  body.projects-body .work-series {
+    position: relative;
+
+    z-index: 20;
+  }
+
+
+  /* OCULTAR EL HEADER DE PROJECTS.HTML
+     El header visible será solamente
+     el de project-board detrás del filtro */
+
+  body.projects-body > .site-header {
+    visibility: hidden !important;
+  }
+
+
+  /* X PARA VOLVER AL TABLERO */
+
+  body.projects-body .project-close {
+    position: fixed;
+
+    top: 43px;
+    right: 28px;
+
+    z-index: 50;
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 38px;
+    font-weight: 200;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    opacity: 0.85;
+
+    transition: opacity 0.25s ease;
+  }
+
+
+  body.projects-body .project-close:hover {
+    opacity: 1;
+  }
+
+
+  /* FLECHAS SIN RECTÁNGULO */
+
+  body.projects-body .work-arrow {
+    background: transparent !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+
+  body.projects-body .work-arrow:hover {
+    background: transparent !important;
+  }
+
+}

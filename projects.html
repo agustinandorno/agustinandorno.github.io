@@ -11,6 +11,31 @@
 
 <body class="work-page projects-body">
 
+  <!-- TABLERO DEL PROYECTO CONGELADO EN SEGUNDO PLANO -->
+
+<div id="project-board-background" aria-hidden="true">
+
+  <iframe
+    id="project-board-frame"
+    tabindex="-1"
+    title="">
+  </iframe>
+
+  <div class="project-board-filter"></div>
+
+</div>
+
+
+<!-- CERRAR VISOR / VOLVER AL TABLERO -->
+
+<a
+  id="project-close"
+  class="project-close"
+  href="#"
+  aria-label="Retour au projet">
+  &times;
+</a>
+
 <header class="site-header">
   <a class="logo logo-image small-logo" href="index.html" aria-label="Agustín Andorno">
   <img src="Favicon2transp.png" alt="" class="logo-mark">
@@ -1012,6 +1037,63 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+</script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const params = new URLSearchParams(window.location.search);
+
+  let serie = params.get("serie");
+
+
+  /* Si por alguna razón no está en la URL,
+     intentamos leerlo desde #serie-18 */
+
+  if (!serie && window.location.hash.startsWith("#serie-")) {
+
+    serie = window.location.hash.replace("#serie-", "");
+
+  }
+
+
+  const backgroundFrame =
+    document.getElementById("project-board-frame");
+
+  const closeButton =
+    document.getElementById("project-close");
+
+
+  if (serie) {
+
+    /* Cargar detrás el tablero correspondiente */
+
+    backgroundFrame.src =
+      "project-board.html?serie=" +
+      encodeURIComponent(serie);
+
+
+    /* La X vuelve al mismo tablero */
+
+    closeButton.href =
+      "project-board.html?serie=" +
+      encodeURIComponent(serie);
+
+  } else {
+
+    /* Si no sabemos qué serie es, ocultamos ambos */
+
+    document.getElementById(
+      "project-board-background"
+    ).style.display = "none";
+
+    closeButton.style.display = "none";
+
+  }
+
+});
+
 </script>
 
 </body>
