@@ -2131,7 +2131,7 @@ body.projects-body .work-slider {
   overflow-y: hidden;
 
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scrollbar-width: none;
 }
 

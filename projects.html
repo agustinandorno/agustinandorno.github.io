@@ -1099,10 +1099,11 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 
 /* =========================================
-   ABRIR LA FOTO ELEGIDA DESDE PROJECT-BOARD
+   ABRIR DIRECTAMENTE LA FOTO ELEGIDA
+   SIN ANIMACIÓN
    ========================================= */
 
-window.addEventListener("load", () => {
+document.addEventListener("DOMContentLoaded", () => {
 
   const params = new URLSearchParams(window.location.search);
 
@@ -1110,15 +1111,10 @@ window.addEventListener("load", () => {
   const photoNumber = parseInt(params.get("photo"), 10);
 
 
-  /* Si entramos sin seleccionar una foto,
-     dejamos funcionar projects.html normalmente */
-
   if (!serie || !photoNumber || photoNumber < 1) {
     return;
   }
 
-
-  /* Buscar el proyecto correspondiente */
 
   const project = document.getElementById(
     "serie-" + serie
@@ -1129,15 +1125,10 @@ window.addEventListener("load", () => {
   }
 
 
-  /* Buscar todas las fotos del proyecto */
-
   const images = project.querySelectorAll(
     ".work-images img"
   );
 
-
-  /* photo=1 corresponde a images[0],
-     photo=2 corresponde a images[1], etc. */
 
   const targetImage = images[photoNumber - 1];
 
@@ -1146,8 +1137,6 @@ window.addEventListener("load", () => {
   }
 
 
-  /* Buscar el slider que contiene las fotos */
-
   const slider = targetImage.closest(".work-slider");
 
   if (!slider) {
@@ -1155,10 +1144,14 @@ window.addEventListener("load", () => {
   }
 
 
-  /* Esperamos un instante a que projects.html
-     termine de colocar todo correctamente */
+  /* Evitar mostrar la primera foto mientras
+     se calcula la posición correcta */
 
-  setTimeout(() => {
+  slider.style.visibility = "hidden";
+  slider.style.scrollBehavior = "auto";
+
+
+  function openSelectedPhoto() {
 
     const sliderRect =
       slider.getBoundingClientRect();
@@ -1173,16 +1166,48 @@ window.addEventListener("load", () => {
       sliderRect.left;
 
 
-    slider.scrollTo({
-      left: destination,
-      behavior: "auto"
+    /* SALTO DIRECTO, SIN ANIMACIÓN */
+
+    slider.scrollLeft = destination;
+
+
+    /* Mostrar únicamente cuando ya estamos
+       en la foto correcta */
+
+    requestAnimationFrame(() => {
+
+      slider.style.visibility = "visible";
+
     });
 
-  }, 100);
+  }
+
+
+  /* Si la imagen ya está cargada */
+
+  if (targetImage.complete) {
+
+    openSelectedPhoto();
+
+  }
+
+  /* Si todavía se está cargando */
+
+  else {
+
+    targetImage.addEventListener(
+      "load",
+      openSelectedPhoto,
+      { once: true }
+    );
+
+  }
 
 });
 
 </script>
+
+
 
 </body>
 </html>
