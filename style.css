@@ -3045,3 +3045,138 @@ body.projects-body > .site-header {
   }
 
 }
+
+/* =========================================
+   PROJECT BOARD — SOLO TELÉFONO
+   HEADER IGUAL A WORK + SEPARACIÓN FOTOS
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  /* -----------------------------------------
+     HEADER
+     ----------------------------------------- */
+
+  body.project-board-body .site-header {
+    display: grid !important;
+
+    grid-template-columns: 1fr auto auto;
+    grid-template-rows: auto auto;
+
+    column-gap: 16px;
+    row-gap: 8px;
+
+    align-items: center;
+
+    padding: 20px 20px 5px;
+
+    background: #fff;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+  }
+
+
+  /* AA — arriba izquierda */
+
+  body.project-board-body .site-header .logo {
+    grid-column: 1;
+    grid-row: 1;
+
+    justify-self: start;
+
+    transform: none !important;
+  }
+
+
+  /* Permitimos que los links del nav
+     utilicen directamente la grilla del header */
+
+  body.project-board-body .site-header nav {
+    display: contents !important;
+  }
+
+
+  /* Limpiar posiciones heredadas */
+
+  body.project-board-body .site-header nav a {
+    position: static !important;
+
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+
+    transform: none !important;
+
+    margin: 0 !important;
+
+    justify-self: start;
+  }
+
+
+  /* GALLERY — abajo izquierda */
+
+  body.project-board-body .site-header nav a:nth-child(1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+
+  /* ABOUT — abajo derecha */
+
+  body.project-board-body .site-header nav a:nth-child(2) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+
+  /* CONTACT — abajo derecha */
+
+  body.project-board-body .site-header nav a:nth-child(3) {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+
+  /* INSTAGRAM — arriba derecha */
+
+  body.project-board-body .site-header nav a:nth-child(4) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+
+  /* LINKEDIN — arriba derecha */
+
+  body.project-board-body .site-header nav a:nth-child(5) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+
+  /* -----------------------------------------
+     FOTOS — SEPARACIÓN VERTICAL
+     ----------------------------------------- */
+
+  body.project-board-body .board-photo {
+    display: block;
+
+    margin: 0 0 18px !important;
+  }
+
+
+  body.project-board-body .board-photo:last-child {
+    margin-bottom: 0 !important;
+  }
+
+
+  body.project-board-body .board-photo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+  }
+
+}

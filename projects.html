@@ -1096,5 +1096,93 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </script>
 
+<script>
+
+/* =========================================
+   ABRIR LA FOTO ELEGIDA DESDE PROJECT-BOARD
+   ========================================= */
+
+window.addEventListener("load", () => {
+
+  const params = new URLSearchParams(window.location.search);
+
+  const serie = params.get("serie");
+  const photoNumber = parseInt(params.get("photo"), 10);
+
+
+  /* Si entramos sin seleccionar una foto,
+     dejamos funcionar projects.html normalmente */
+
+  if (!serie || !photoNumber || photoNumber < 1) {
+    return;
+  }
+
+
+  /* Buscar el proyecto correspondiente */
+
+  const project = document.getElementById(
+    "serie-" + serie
+  );
+
+  if (!project) {
+    return;
+  }
+
+
+  /* Buscar todas las fotos del proyecto */
+
+  const images = project.querySelectorAll(
+    ".work-images img"
+  );
+
+
+  /* photo=1 corresponde a images[0],
+     photo=2 corresponde a images[1], etc. */
+
+  const targetImage = images[photoNumber - 1];
+
+  if (!targetImage) {
+    return;
+  }
+
+
+  /* Buscar el slider que contiene las fotos */
+
+  const slider = targetImage.closest(".work-slider");
+
+  if (!slider) {
+    return;
+  }
+
+
+  /* Esperamos un instante a que projects.html
+     termine de colocar todo correctamente */
+
+  setTimeout(() => {
+
+    const sliderRect =
+      slider.getBoundingClientRect();
+
+    const imageRect =
+      targetImage.getBoundingClientRect();
+
+
+    const destination =
+      slider.scrollLeft +
+      imageRect.left -
+      sliderRect.left;
+
+
+    slider.scrollTo({
+      left: destination,
+      behavior: "auto"
+    });
+
+  }, 100);
+
+});
+
+</script>
+
 </body>
 </html>
