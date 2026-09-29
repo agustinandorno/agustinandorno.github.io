@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Project | Agustin Andorno</title>
+
+  <link rel="icon" type="image/png" href="Favicon2.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body class="project-board-body">
+
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <a
+      class="logo logo-image small-logo"
+      href="index.html"
+      aria-label="Agustín Andorno"
+    >
+      <img
+        src="Favicon2transp.png"
+        alt=""
+        class="logo-mark"
+      >
+    </a>
+
+
+    <nav>
+
+      <a href="work.html">Gallery</a>
+
+      <a href="about.html">About</a>
+
+      <a href="contact.html">Contact</a>
+
+
+      <a
+        href="https://instagram.com/agustinandorno"
+        target="_blank"
+        aria-label="Instagram"
+      >
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+
+          <rect
+            x="2"
+            y="2"
+            width="20"
+            height="20"
+            rx="5"
+            ry="5">
+          </rect>
+
+          <circle
+            cx="12"
+            cy="12"
+            r="4">
+          </circle>
+
+          <circle
+            cx="17.5"
+            cy="6.5"
+            r="0.8">
+          </circle>
+
+        </svg>
+
+      </a>
+
+
+      <a
+        href="https://linkedin.com/in/agustinandorno"
+        target="_blank"
+      >
+        in
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- TABLERO DEL PROYECTO -->
+
+<main class="project-board">
+
+  
+
+</main>
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded", async () => {
+
+  const params = new URLSearchParams(window.location.search);
+
+  const serie = params.get("serie");
+
+  const board = document.querySelector(".project-board");
+
+  if (!serie) {
+    board.innerHTML = "<p>Proyecto no encontrado.</p>";
+    return;
+  }
+
+  try {
+
+    const response = await fetch("projects.html");
+
+    const html = await response.text();
+
+    const parser = new DOMParser();
+
+    const doc = parser.parseFromString(
+      html,
+      "text/html"
+    );
+
+    const project = doc.getElementById(
+      "serie-" + serie
+    );
+
+    if (!project) {
+      board.innerHTML = "<p>Proyecto no encontrado.</p>";
+      return;
+    }
+
+    const images = project.querySelectorAll(
+      ".work-images img"
+    );
+
+    board.innerHTML = "";
+
+    images.forEach((image, index) => {
+
+      const link = document.createElement("a");
+
+      link.className = "board-photo";
+
+      link.href =
+        "projects.html?serie=" +
+        serie +
+        "&photo=" +
+        (index + 1) +
+        "#serie-" +
+        serie;
+
+      const newImage = document.createElement("img");
+
+      newImage.src = image.getAttribute("src");
+
+      newImage.alt =
+        image.getAttribute("alt") || "";
+
+      newImage.loading = "lazy";
+
+      newImage.decoding = "async";
+
+      link.appendChild(newImage);
+
+      board.appendChild(link);
+
+    });
+
+  }
+
+  catch (error) {
+
+    console.error(error);
+
+    board.innerHTML =
+      "<p>Error al cargar el proyecto.</p>";
+
+  }
+
+});
+
+</script>
+
+
+</body>
+
+</html>

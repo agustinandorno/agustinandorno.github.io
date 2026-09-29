@@ -2659,3 +2659,88 @@ body.home-page.video-cover .home-cover-video {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+/* =========================================
+   PROJECT BOARD — DESKTOP
+   MASONRY 2 COLUMNAS
+   ========================================= */
+
+@media (min-width: 801px) {
+
+  body.project-board-body {
+    width: 100%;
+    min-height: 100dvh;
+
+    margin: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+
+  body.project-board-body .project-board {
+    position: relative;
+
+    width: calc(100% - 120px);
+
+    margin: 95px 60px 50px;
+
+    padding: 0;
+
+    /* MÁXIMO DOS COLUMNAS */
+    column-count: 2;
+
+    /* ESPACIO HORIZONTAL */
+    column-gap: 18px;
+  }
+
+
+  body.project-board-body .board-photo {
+    display: block;
+
+    width: 100%;
+
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+
+    /* MISMO ESPACIO VERTICAL */
+    margin: 0 0 18px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+  }
+
+
+  body.project-board-body .board-photo img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    transition: transform 0.35s ease;
+  }
+
+
+  /* ZOOM AL PASAR EL MOUSE */
+
+  body.project-board-body .board-photo:hover img {
+    transform: scale(1.04);
+  }
+
+
+  /* ANULAR POSICIONES DEL DISEÑO ANTERIOR */
+
+  body.project-board-body .photo-1,
+  body.project-board-body .photo-2,
+  body.project-board-body .photo-3,
+  body.project-board-body .photo-4,
+  body.project-board-body .photo-5,
+  body.project-board-body .photo-6 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+}
