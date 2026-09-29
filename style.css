@@ -2798,7 +2798,7 @@ body.projects-body .project-board-filter {
 
   inset: 0;
 
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.55);
 
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -2958,7 +2958,7 @@ body.projects-body > .site-header {
 
     inset: 0;
 
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.85);
 
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -3185,4 +3185,28 @@ body.projects-body > .site-header {
 
 html.opening-selected-photo body.projects-body .work-series {
   visibility: hidden !important;
+}
+
+/* =========================================
+   PC — AJUSTE VERTICAL FINAL
+   TEXTO + FOTO + X
+   ========================================= */
+
+@media (min-width: 801px) and (hover: hover) and (pointer: fine) {
+
+  /* SUBIR TEXTO IZQUIERDO */
+  body.projects-body .work-caption {
+    top: 50px !important;
+  }
+
+  /* SUBIR FOTO PRINCIPAL */
+  body.projects-body .work-slider {
+    padding-top: 20px !important;
+  }
+
+  /* SUBIR X */
+  body.projects-body .project-close {
+    top: 23px !important;
+  }
+
 }
