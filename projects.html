@@ -6,6 +6,11 @@
   <title>Work | Agustin Andorno</title>
   <link rel="icon" type="image/png" href="Favicon2.png">
   <link rel="stylesheet" href="style.css">
+  <script>
+  if (new URLSearchParams(window.location.search).has("photo")) {
+    document.documentElement.classList.add("opening-selected-photo");
+  }
+</script>
   <link rel="canonical" href="https://www.agustinandorno.com/projects.html">
 </head>
 
@@ -1099,11 +1104,11 @@ document.addEventListener("DOMContentLoaded", () => {
 <script>
 
 /* =========================================
-   ABRIR DIRECTAMENTE LA FOTO ELEGIDA
-   SIN ANIMACIÓN
+   ABRIR EXACTAMENTE LA FOTO ELEGIDA
+   SIN BARRIDA NI ANIMACIÓN INICIAL
    ========================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
 
   const params = new URLSearchParams(window.location.search);
 
@@ -1112,96 +1117,85 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   if (!serie || !photoNumber || photoNumber < 1) {
+    document.documentElement.classList.remove("opening-selected-photo");
     return;
   }
 
+
+  /* Buscar la serie correcta */
 
   const project = document.getElementById(
     "serie-" + serie
   );
 
   if (!project) {
+    document.documentElement.classList.remove("opening-selected-photo");
     return;
   }
 
 
-  const images = project.querySelectorAll(
-    ".work-images img"
+  /* Fotos de esa serie */
+
+  const images = Array.from(
+    project.querySelectorAll(".work-images img")
   );
 
 
   const targetImage = images[photoNumber - 1];
 
   if (!targetImage) {
+    document.documentElement.classList.remove("opening-selected-photo");
     return;
   }
 
 
-  const slider = targetImage.closest(".work-slider");
+  /* Slider correspondiente */
+
+  const slider = project.closest(".work-slider");
 
   if (!slider) {
+    document.documentElement.classList.remove("opening-selected-photo");
     return;
   }
 
 
-  /* Evitar mostrar la primera foto mientras
-     se calcula la posición correcta */
+  /* Desactivar temporalmente cualquier
+     animación y scroll-snap */
 
-  slider.style.visibility = "hidden";
   slider.style.scrollBehavior = "auto";
+  slider.style.scrollSnapType = "none";
 
 
-  function openSelectedPhoto() {
+  /* Ir INSTANTÁNEAMENTE a la foto elegida */
 
-    const sliderRect =
-      slider.getBoundingClientRect();
-
-    const imageRect =
-      targetImage.getBoundingClientRect();
+  slider.scrollLeft = targetImage.offsetLeft;
 
 
-    const destination =
-      slider.scrollLeft +
-      imageRect.left -
-      sliderRect.left;
+  /* Repetimos una vez en el siguiente frame
+     para garantizar que el navegador ya calculó
+     correctamente todas las dimensiones */
 
+  requestAnimationFrame(() => {
 
-    /* SALTO DIRECTO, SIN ANIMACIÓN */
-
-    slider.scrollLeft = destination;
-
-
-    /* Mostrar únicamente cuando ya estamos
-       en la foto correcta */
+    slider.scrollLeft = targetImage.offsetLeft;
 
     requestAnimationFrame(() => {
 
-      slider.style.visibility = "visible";
+      /* Restaurar el scroll-snap normal */
+
+      slider.style.removeProperty("scroll-snap-type");
+      slider.style.removeProperty("scroll-behavior");
+
+
+      /* Ahora sí mostramos el visor */
+
+      document.documentElement.classList.remove(
+        "opening-selected-photo"
+      );
 
     });
 
-  }
-
-
-  /* Si la imagen ya está cargada */
-
-  if (targetImage.complete) {
-
-    openSelectedPhoto();
-
-  }
-
-  /* Si todavía se está cargando */
-
-  else {
-
-    targetImage.addEventListener(
-      "load",
-      openSelectedPhoto,
-      { once: true }
-    );
-
-  }
+  });
 
 });
 

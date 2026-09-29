@@ -3180,3 +3180,9 @@ body.projects-body > .site-header {
   }
 
 }
+
+/* OCULTAR EL VISOR HASTA ESTAR EN LA FOTO ELEGIDA */
+
+html.opening-selected-photo body.projects-body .work-series {
+  visibility: hidden !important;
+}
