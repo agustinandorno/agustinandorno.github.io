@@ -297,7 +297,7 @@ $imageLines
 
 $workBlock = @"
 
-  <a class="work-card" href="projects.html#serie-$serieNumber">
+  <a class="work-card" href="project-board.html?serie=$serieNumber">
     <img src="images/$coverImage" alt="">
   </a>
 
