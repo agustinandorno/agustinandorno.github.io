@@ -1001,19 +1001,19 @@ body.intro-active .home-reveal-images {
 .home-reveal-images {
   opacity: 0;
   filter: blur(12px);
-  transition: opacity 0.6s ease, filter 0.6s ease;
+  transition: opacity 0.5s ease, filter 0.5s ease;
 }
 
 body.home-visible .home-reveal-images {
   opacity: 1;
   filter: blur(0);
-  transition-delay: 0.6s;
+  transition-delay: 0.2s;
 }
 
 body.home-visible .home-reveal-logo {
   opacity: 1;
   filter: blur(0);
-  transition-delay: 0.2s;
+  transition-delay: 0.6s;
 }
 
 /* WORK CARD HOVER EFFECT */
@@ -3211,3 +3211,19 @@ html.opening-selected-photo body.projects-body .work-series {
 
 }
 
+/* PRUEBA — INTRO NEGRA CON LETRAS BLANCAS */
+
+#intro-screen {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+#intro-screen .intro-logo {
+  filter: invert(1) !important;
+  animation: none !important;
+  opacity: 1 !important;
+}
+
+#intro-screen .intro-footer {
+  color: #fff !important;
+}
