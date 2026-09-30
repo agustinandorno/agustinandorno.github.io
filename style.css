@@ -1001,7 +1001,7 @@ body.intro-active .home-reveal-images {
 .home-reveal-images {
   opacity: 0;
   filter: blur(12px);
-  transition: opacity 1.2s ease, filter 1.2s ease;
+  transition: opacity 0.6s ease, filter 0.6s ease;
 }
 
 body.home-visible .home-reveal-images {
@@ -3211,38 +3211,3 @@ html.opening-selected-photo body.projects-body .work-series {
 
 }
 
-/* =========================================
-   INDEX — APARICIÓN INSTANTÁNEA
-   DESPUÉS DE LA INTRODUCCIÓN
-   ========================================= */
-
-/* Eliminar la segunda animación */
-
-body.home-page .home-reveal-logo,
-body.home-page .home-reveal-images,
-body.home-page .home-reveal-footer,
-body.home-page .home-mobile {
-  transition: none !important;
-  transition-delay: 0s !important;
-  filter: none !important;
-}
-
-/* Mantener el index oculto durante la intro */
-
-body.home-page:not(.home-visible) .home-reveal-logo,
-body.home-page:not(.home-visible) .home-reveal-images,
-body.home-page:not(.home-visible) .home-reveal-footer,
-body.home-page:not(.home-visible) .home-mobile {
-  opacity: 0 !important;
-  visibility: hidden !important;
-}
-
-/* Mostrar todo instantáneamente al terminar */
-
-body.home-page.home-visible .home-reveal-logo,
-body.home-page.home-visible .home-reveal-images,
-body.home-page.home-visible .home-reveal-footer,
-body.home-page.home-visible .home-mobile {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
